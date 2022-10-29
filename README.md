@@ -1,2 +1,4 @@
 # Mastodon-Soziologenliste
- David Adlers große Liste deutsch und englischsprachiger Soziologen als .csv Datei um schnell und einfach allen folgen zu können
+David Adler stellte die Liste zusammen
+
+mithilfe der .csv Datei kann man allen mit nur wenig klicks folgen
