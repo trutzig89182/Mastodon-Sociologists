@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sociologists on Mastodon</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <!-- weitere Kopfinformationen -->
+    <!-- Kommentare werden im Browser nicht angezeigt. -->
+  </head>
+  <body>
+    <h1>Sociologists on Mastodon</h1>
+    <h2>Follow all your favourite sociologists.</h2>
+    <p>You want to find your sociological network in Mastodon?
+      This page lists sociological accounts and offers an easy method to follow multiple of those accounts in a few clicks.
+      For this you are provided with a .csv-file, based on your choices.
+      Mastodon allows to follow muliple accounts by uploading this file.
+      <a href="instructions.pdf" target="_blank">Here</a> you can find an short instruction, on how to do this.
+    </p>
+    <p>Here you have two options, either you can download the complete list, or you can select specific accouts you want to follow.
+      A csv-file will be downloaded once you press the button.
+    </p>
+    <div>
+      <p>
+        <button type="button" id="all_button">Select all</button>
+      </p>
+    </div>
+
+    <form method="post" action="/Tests/Post/">
+      <fieldset>
+          <legend>Sociologists by account, Name and profile link</legend>
+          <div id="sociologists_list">
+          </div>
+          <br>
+          <!-- <input type="submit" value="Get selected accounts" id="selected_button"/> -->
+          <button type="button" id="selected_button">Get csv file for selected accounts</button>
+      </fieldset>
+    </form>
+
+
+    <!-- Scripts -->
+      <script src="assets/js/papaparse.min.js"></script>
+      <script src="assets/js/createcsv.js"></script>
+
+  </body>
+
+
+</html>
