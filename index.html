@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sociologists on Mastodon</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <!-- weitere Kopfinformationen -->
+    <!-- Kommentare werden im Browser nicht angezeigt. -->
+  </head>
+  <body>
+    <h1>Sociologists on Mastodon</h1>
+    <h2>Follow all your favourite sociologists</h2>
+    <p>You want to find your sociological network in Mastodon?
+      This page lists sociological accounts and offers an easy method to follow multiple of those accounts in a few clicks.
+      For this you are provided with a .csv-file, which you can upload in Mastodon to follow all accounts you chose.
+      <a href="instructions.pdf" target="_blank">Here</a> you can find an short instruction, on how to do this.
+    </p>
+
+    <div>
+      <p>
+        <button type="button" id="all_button">Select all</button>
+        <button type="button" id="none_button">Select none</button>
+      </p>
+    </div>
+
+    <form method="post" action="/Tests/Post/">
+      <fieldset>
+          <legend><b>Sociologists by account, Name and profile link (most recent first)</b></legend>
+          <div id="sociologists_list">
+          </div>
+          <br>
+          <!-- <input type="submit" value="Get selected accounts" id="selected_button"/> -->
+          <button type="button" id="selected_button">Get csv file for selected accounts</button>
+      </fieldset>
+    </form>
+
+    <p>
+      Names are only shown if given in the profile or on explicit demand from the account.
+      You want to get on the list? Or you don’t want to be on it anymore? Please contact me under <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">@perspektivbrocken@social.tchncs.de</a> or (<a href="mailto:david.adler@uni-oldenburg.de" target="_blank">via email</a>.)
+    </p>
+    <hr>
+    <p>
+      <small>
+        <i>Brought to you by <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">David Adler</a>, <a href="https://social.tchncs.de/@thhaase" target="_blank">Thomas Haase</a> & <a href="https://scholar.social/@hendrikerz" target="_blank">Hendrik Erz</a>. In order to contribute please visit our <a href="https://github.com/trutzig89182/Mastodon-Sociologists" target="_blank">GitHub-Repository</a>.</i>
+      </small>
+    </p>
+    <!-- Scripts -->
+      <script src="assets/js/papaparse.min.js"></script>
+      <script src="assets/js/createcsv.js"></script>
+
+  </body>
+
+
+</html>
