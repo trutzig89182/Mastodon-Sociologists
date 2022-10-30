@@ -3,3 +3,13 @@
 This repository provides a most simple webapp that helps to bulk follow sociologists on the FOSS microbloging service Mastodon. In it you can create a csv-file that can be uploaded in your mastodon seetings, in order to follow every account from the list.
 
 The initial list was and it’s context can be found here (https://www.perspektivbrocken.org/en/2022/10/28/sociologists-on-mastodon-a-list/).
+
+## Can I use this for my discipline/peer group?
+
+Yes, basically you just have to fork the repro. There are two files that you will need to change. The Text in index.html and the accounts that are stored in resources/sociologists.csv. Please keep the name of this file (or change it in assets/js/createcsv.js, too).
+
+You can publish your web app directly from the repository. For this, go to “Settings” and then choose “pages” in the left menue.
+
+## License
+
+The the repositiory can be used under GNU Public Licese v3, except the /resources/sociologists.csv, which can only be used with explicit permission by the authors. 
