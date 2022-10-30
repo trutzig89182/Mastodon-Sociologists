@@ -1,4 +1,4 @@
-# Mastodon Socilogists
+# Mastodon Sociologists
 
 This repository provides a most simple webapp that helps to bulk follow sociologists on the FOSS microbloging service Mastodon. In it you can create a csv-file that can be uploaded in your mastodon seetings, in order to follow every account from the list.
 
