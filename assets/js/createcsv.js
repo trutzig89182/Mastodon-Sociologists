@@ -21,26 +21,31 @@ function printSociologistsOnWP(data) {
   console.log(data);
   var allsociologists_complete = Papa.parse(data, {header: true}); // parses csv to json
   for (var i = 0; i < allsociologists_complete["data"].length; i++){
-    var sociologist = allsociologists_complete["data"][i];
-    var checkbox = document.createElement('input');
-    checkbox.type = "checkbox";
-    checkbox.name = "selected_sociologists";
-    checkbox.value = sociologist["account"];
-    checkbox.id = "sociologist" + i;
-    var label = document.createElement('label');
-    label.htmlFor = "id";
-    label.appendChild(document.createTextNode(sociologist["account"] + " (" + sociologist["name"] + "), "));
-    var profilelink = document.createElement('a');
-    profilelink.href = sociologist["link"];
-    profilelink.target = "_blank";
-    const linkname = document.createTextNode(sociologist["link"]);
-    profilelink.appendChild(linkname);
-    const linebreak = document.createElement('br');
 
-    document.getElementById("sociologists_list").appendChild(checkbox);
-    document.getElementById("sociologists_list").appendChild(label);
-    document.getElementById("sociologists_list").appendChild(profilelink);
-    document.getElementById("sociologists_list").appendChild(linebreak);
+    var sociologist = allsociologists_complete["data"][i];
+    if (!sociologist["name"].isEmpty){
+      var checkbox = document.createElement('input');
+      checkbox.type = "checkbox";
+      checkbox.name = "selected_sociologists";
+      checkbox.value = sociologist["account"];
+      checkbox.id = "sociologist" + i;
+      var label = document.createElement('label');
+      label.htmlFor = "id";
+      label.appendChild(document.createTextNode(sociologist["account"] + " (" + sociologist["name"] + "), "));
+      var profilelink = document.createElement('a');
+      profilelink.href = sociologist["link"];
+      profilelink.target = "_blank";
+      const linkname = document.createTextNode(sociologist["link"]);
+      profilelink.appendChild(linkname);
+      const linebreak = document.createElement('br');
+
+      document.getElementById("sociologists_list").appendChild(checkbox);
+      document.getElementById("sociologists_list").appendChild(label);
+      document.getElementById("sociologists_list").appendChild(profilelink);
+      document.getElementById("sociologists_list").appendChild(linebreak);
+
+    }
+
 
 
     //var content = document.createTextNode(astring);
