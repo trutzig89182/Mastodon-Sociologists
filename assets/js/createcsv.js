@@ -1,4 +1,5 @@
 document.getElementById("all_button").addEventListener("click", selectAll);
+document.getElementById("none_button").addEventListener("click", selectNone);
 document.getElementById("selected_button").addEventListener("click", createSelectedCsv);
 
 
@@ -56,6 +57,18 @@ function selectAll() {
     // looping through all checkboxes
     for (var i = 0; i < checkboxes.length; i++) {
       checkboxes[i].checked = true;
+      values.push(checkboxes[i].value);
+    }
+}
+
+function selectNone() {
+    // selecting all checkboxes
+    // of group language
+    var checkboxes = document.getElementsByName('selected_sociologists');
+    var values = [];
+    // looping through all checkboxes
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = false;
       values.push(checkboxes[i].value);
     }
 }
