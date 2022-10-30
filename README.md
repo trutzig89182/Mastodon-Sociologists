@@ -12,4 +12,4 @@ You can publish your web app directly from the repository. For this, go to “Se
 
 ## License
 
-The repository can be used under GNU Public Licese v3, except the /resources/sociologists.csv-file, which can only be used with explicit permission by the authors. 
+The repository can be used under GNU General Public Licese v3, except the /resources/sociologists.csv-file, which can only be used with explicit permission by the authors. 
