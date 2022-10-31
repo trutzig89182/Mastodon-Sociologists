@@ -1,41 +1,29 @@
 account,name,link
-@gavmaclean@scholar.social,Gav Maclean,https://scholar.social/@gavmaclean
-@GhaP@mastodon.social,..,https://mastodon.social/@GhaP
-@jwyg@post.lurk.org,Jonathan W. Y. Gray,https://post.lurk.org/@jwyg
-@InclusiveLucie@mastodon.social,Lucie Fremlova,https://mastodon.social/@InclusiveLucie
-@calebscoville@mastodon.social,Caleb Scoville,https://mastodon.social/@calebscoville
-@kshafer@mstdn.social,Kevin Shafer,https://mstdn.social/@kshafer
-@ximex@freiburg.social,Max Bolze,@ximex@freiburg.social
-@seth_abrutyn@mastodon.sdf.org,Seth Abrutyn,https://mastodon.sdf.org/@seth_abrutyn
-@PaulWeinheimer@mastodon.social,Paul Weinheimer,https://mastodon.social/@PaulWeinheimer
-@jogruhl@mastodon.social,Julia Gruhlich,https://mastodon.social/@jogruhl
-@HannahimWahnsinn@troet.cafe,..,https://mastodon.social/@HannahimWahnsinn@troet.cafe
-@Ninhowsky@mastodon.social,Nina,https://mastodon.social/@Ninhowsky
-@wechselwirkung@mastodon.social,Anıl Önder,https://mastodon.social/@wechselwirkung
-@austinkocher@mastodon.social,Austin Kocher,https://mastodon.social/@austinkocher
-@sebastianschroeder@nrw.social,Sebastian Schröder,https://nrw.social/@sebastianschroeder
-@RaphaelKohl@mastodon.social,Raphael Kohl,https://mastodon.social/@RaphaelKohl
-@cbrandtner@mastodon.social,Christof Brandtner,https://mastodon.social/@cbrandtner
-@KarinScherschel@mastodon.social,Karin Scherschel,https://mastodon.social/@KarinScherschel
-@allartmarkets@mstdn.social,Liz Mcfall,https://mastodon.social/@allartmarkets@mstdn.social
-@immersender@mastodon.social,Frank Meier,https://mastodon.social/@immersender
-@katjamoe@mastodon.social,Katja Möhring,https://mastodon.social/@katjamoe
-@xlejx_rodsxn@mastodon.social,Aleja Rodríguez Sánchez,https://mastodon.social/@xlejx_rodsxn
-@sewenz@mastodon.social,Sebastian E. Wenz,https://mastodon.social/@sewenz
-@Theoriesektion@mastodon.social,Sektion Soziologische Theorie (DGS),https://mastodon.social/@Theoriesektion
-@akwiho@social.tchncs.de,Arbeitskreis Wisseschaft- und Hochschulforschung,https://social.tchncs.de/@akwiho
-@UltrasNiklasLuhmann@mastodon.social,Ultras_Luhmann,https://mastodon.social/@UltrasNiklasLuhmann
 @AKOrgaBewertung@mastodon.social,Arbeitskreis Orga + Bewertung,https://mastodon.social/@AKOrgaBewertung
+@akwiho@social.tchncs.de,Arbeitskreis Wisseschaft- und Hochschulforschung,https://social.tchncs.de/@akwiho
 @AlexanderBrand@troet.cafe,Alexander Brand ,https://troet.cafe/@AlexanderBrand
 @AlexanderSchmidl@mastodon.social,Alexander Schmidt,https://mastodon.social/@AlexanderSchmidl
 @AlexMitterle@mastodon.social,Alex Mitterle,https://mastodon.social/@AlexMitterle
-@amateur_garde@mastodon.social,Désirée Waibel,https://mastodon.social/@amateur_garde
+@allartmarkets@mstdn.social,Liz Mcfall,https://mastodon.social/@allartmarkets@mstdn.social
+@allartmarkets@mstdn.social,Liz Mcfall,https://mstdn.social/@allartmarkets
+@amateur_garde@mastodon.social,D�sir�e Waibel,https://mastodon.social/@amateur_garde
+@annamueller@mastodon.social,Anna S Mueller,https://mastodon.social/@annamueller
+@annikabkr@mastodon.social,Annika Becker,https://mastodon.social/@annikabkr
 @ANosthoff@mastodon.social,Anna-Verena Nosthoff,https://mastodon.social/@ANosthoff
+@antongrau@mastodon.social ,Anton Grau Larsen ,https://mastodon.social/@antongrau@mastodon.social
+@aoberg@rheinneckar.social,Achim Oberg ,https://rheinneckar.social/@aoberg
+@arko23@mastodon.social,A. Koevel,https://mastodon.social/@arko23
+@austinkocher@mastodon.social,Austin Kocher,https://mastodon.social/@austinkocher
 @bekado@social.tchncs.de,Benjamin Doubali,https://social.tchncs.de/@bekado
 @Bindestriche@social.anoxinon.de,..,https://social.anoxinon.de/@Bindestriche
-@bjoernkrey@troet.cafe,Björn Krey,https://mastodon.social/@bjoernkrey
-@Blaabaek@mastodon.social,Ea Hoppe Blaabæk,https://mastodon.social/@Blaabaek
+@bjoernkrey@troet.cafe,Bj�rn Krey,https://mastodon.social/@bjoernkrey
+@Blaabaek@mastodon.social,Ea Hoppe Blaab�k,https://mastodon.social/@Blaabaek
+@calebscoville@mastodon.social,Caleb Scoville,https://mastodon.social/@calebscoville
+@calebscoville@mastodon.social ,Caleb Scoville ,https://mastodon.social/@calebscoville
+@cameroncampbell@mstdn.social,Cameron Campbell,https://mstdn.social/@cameroncampbell
+@cbrandtner@mastodon.social,Christof Brandtner,https://mastodon.social/@cbrandtner
 @chrishammermann@social.tchncs.de,Chris Hammermann,https://social.tchncs.de/@chrishammermann
+@deutschmann@nerdculture.de ,Emanuel Deutschmann ,https://mastodon.social/@deutschmann@nerdculture.de
 @DieVilla4@mastodon.social,DieVillaBraslavsky,https://mastodon.social/@DieVilla4
 @DiscourseNet@fediscience.org,DiscourseNet,https://fediscience.org/@DiscourseNet
 @dustinstoltz@scholar.social,Dustin Stoltz,https://scholar.social/@dustinstoltz
@@ -45,54 +33,77 @@ account,name,link
 @florianeyert@mastodon.social,Florian Eyert,https://mastodon.social/@florianeyert
 @fosrecki@mastodon.social,Fran Osrecki,https://mastodon.social/@fosrecki
 @fstengel@mastodon.social,Frank Stengel,https://mastodon.social/@fstengel
+@gavmaclean@scholar.social,Gav Maclean,https://scholar.social/@gavmaclean
+@gavmaclean@scholar.social ,Gav Maclean ,https://scholar.social/@gavmaclean
+@GhaP@mastodon.social,..,https://mastodon.social/@GhaP
+@GhaP@mastodon.social ,GhaP ,https://mastodon.social/@GhaP
+@HannahimWahnsinn@troet.cafe,..,https://mastodon.social/@HannahimWahnsinn@troet.cafe
 @hcadenas@mastodon.social,Hugo Cadenas,https://mastodon.social/@hcadenas
+@heidenernst@climatejustice.social ,Mic Ernst-Heidenreich ,https://mastodon.social/@heidenernst@climatejustice.social 
 @hendrikerz@scholar.social,Hendrik Erz,https://scholar.social/@hendrikerz
-@ingorohlfing@mastodon.social,Ingo Rohlfing,https://mastodon.social/@ingorohlfing
 @i_ngli@scholar.social,Ingmar Lippert,https://scholar.social/@i_ngli
+@immersender@mastodon.social,Frank Meier,https://mastodon.social/@immersender
+@InclusiveLucie@mastodon.social,Lucie Fremlova,https://mastodon.social/@InclusiveLucie
+@InclusiveLucie@mastodon.social ,Lucie Fremlova,https://mastodon.social/@InclusiveLucie
+@ingorohlfing@mastodon.social,Ingo Rohlfing,https://mastodon.social/@ingorohlfing
 @JanaHeinz@muenchen.social,JanaHeinz,https://muenchen.social/@JanaHeinz
 @janap@mastodon.social,jana,https://mastodon.social/@janap
+@janguenth@mastodon.social,Jan* Guenth* von Friedenstab,https://mastodon.social/@janguenth
 @jelena3121@mastodon.social,Jelena Brankovic,https://mastodon.social/@jelena3121
+@jogruhl@mastodon.social,Julia Gruhlich,https://mastodon.social/@jogruhl
 @johsvogel@scholar.social,Johannes S. Vogel,https://scholar.social/@johsvogel
 @JulianHamann1@mastodon.social,Julian Hamann,https://mastodon.social/@JulianHamann1
 @julSEU@mastodon.social,Julian Seuring,https://mastodon.social/@julSEU
+@jwyg@post.lurk.org,Jonathan W. Y. Gray,https://post.lurk.org/@jwyg
+@jwyg@post.lurk.org ,jonathan w. y. gray ,https://post.lurk.org/@jwyg
+@karengregory@mastodon.social,Karen Gregory,https://mastodon.social/@karengregory
+@KarinScherschel@mastodon.social,Karin Scherschel,https://mastodon.social/@KarinScherschel
+@katjamoe@mastodon.social,Katja M�hring,https://mastodon.social/@katjamoe
+@kjhealy@mastodon.social,Kieran Healy,https://mastodon.social/@kjhealy
+@klauspforr@mastodon.social,Klaus Pforr,https://mastodon.social/@klauspforr
+@kshafer@mstdn.social,Kevin Shafer,https://mstdn.social/@kshafer
+@kshafer@mstdn.social ,Kevin Shafer ,https://mstdn.social/@kshafer
 @LarsAlberth@mastodon.social,Lars Alberth,https://mastodon.social/@LarsAlberth
+@le_rstelle@social.tchncs.de ,markus,https://social.tchncs@le_rstelle@social.tchncs.de 
 @LordElend@fediscience.org,Arne Maibaum,https://fediscience.org/@LordElend
 @matsommer@mastodon.social ,Matthias Sommer,https://mastodon.social/@matsommer
 @mheil@bildung.social,Matthias Heil,https://bildung.social/@mheil
 @naomilawsonjacobs@fediscience.org,Naomi Lawson Jacobs,https://fediscience.org/@naomilawsonjacobs
+@Ninhowsky@mastodon.social,Nina,https://mastodon.social/@Ninhowsky
 @Oliver_Wieczorek@mastodon.social,Oliver Wieczorek,https://mastodon.social/@Oliver_Wieczorek
 @onlytina@todon.eu,..,https://todon.eu/@onlytina
 @pardoguerra@mastodon.social,JP Pardo-Guerra,https://mastodon.social/@pardoguerra
+@PaulWeinheimer@mastodon.social,Paul Weinheimer,https://mastodon.social/@PaulWeinheimer
 @pengzell@mastodon.social,Per Engzell,https://mastodon.social/@pengzell
 @perspektivbrocken@social.tchncs.de,David Adler,https://social.tchncs.de/@perspektivbrocken
 @petka@mastodon.social,Peter Kahlert,https://mastodon.social/@petka
 @philipncohen@mastodon.social,Philip N Cohen,https://mastodon.social/@philipncohen
 @ramyologist@mastodon.social,..,https://mastodon.social/@ramyologist
+@RaphaelKohl@mastodon.social,Raphael Kohl,https://mastodon.social/@RaphaelKohl
 @reliablyjeff@mastodon.social,Jeff Roberts,https://mastodon.social/@reliablyjeff
 @RobertSeyfert@mastodon.social,Robert Seyfert,https://mastodon.social/@RobertSeyfert
+@sebastianschroeder@nrw.social,Sebastian Schr�der,https://nrw.social/@sebastianschroeder
+@seth_abrutyn@mastodon.sdf.org,Seth Abrutyn,https://mastodon.sdf.org/@seth_abrutyn
+@sewenz@mastodon.social,Sebastian E. Wenz,https://mastodon.social/@sewenz
 @silviosuckow@mastodon.social,Silvio Suckow,https://mastodon.social/@silviosuckow
 @simonlindgren@mastodon.social,Simon Lindgren,https://mastodon.social/@simonlindgren
-@sluecking@mastodon.xyz,Stefan Lücking,https://mastodon.xyz/@sluecking
+@sluecking@mastodon.xyz,Stefan L�cking,https://mastodon.xyz/@sluecking
 @sms2sms@ifwo.eu,Stefan M. Seydel,https://ifwo.eu/@sms2sms
+@Soc_Jillian@mastodon.social ,Jillian Sunderland ,https://mastodon.social/@Soc_Jillian
 @sowa@mastodon.social,Frank Sowa,https://mastodon.social/@sowa
 @sozialwelten@ifwo.eu,Michael Karbacher,https://ifwo.eu/@sozialwelten
 @stefanlaser@social.tchncs.de,Stefan Laser,https://social.tchncs.de/@stefanlaser
 @theHaefler@troet.cafe,..,https://troet.cafe/@theHaefler
+@Theoriesektion@mastodon.social,Sektion Soziologische Theorie (DGS),https://mastodon.social/@Theoriesektion
+@thhaase@social.tchncs.de,Thomas Haase,https://social.tchncs.de/@thhaase
 @thorsten_peetz@mastodon.social,Thorsten Peetz,https://mastodon.social/@thorsten_peetz
+@UltrasNiklasLuhmann@mastodon.social,Ultras_Luhmann,https://mastodon.social/@UltrasNiklasLuhmann
 @Vorinstanz@social.tchncs.de,..,https://social.tchncs.de/@Vorinstanz
-@Weltenkreuzer@social.tchncs.de,Nils Müller,https://social.tchncs.de/@Weltenkreuzer
+@wechselwirkung@mastodon.social,An?l �nder,https://mastodon.social/@wechselwirkung
+@Weltenkreuzer@social.tchncs.de,Nils M�ller,https://social.tchncs.de/@Weltenkreuzer
 @wolf_witte@ruhr.social,Wolf Witte,https://ruhr.social/@wolf_witte
+@ximex@freiburg.social,Max Bolze,@ximex@freiburg.social
+@ximex@freiburg.social ,Max Bolze ,https://mastodon.social/@ximex@freiburg.social 
+@xlejx_rodsxn@mastodon.social,Aleja Rodr�guez S�nchez,https://mastodon.social/@xlejx_rodsxn
 @ybaumy@mk.autonomy.earth,..,https://mk.autonomy.earth/@ybaumy
 @zukunftsheld@mastodon.social,Ingmar Mundt,https://mastodon.social/@zukunftsheld
-@annikabkr@mastodon.social,Annika Becker,https://mastodon.social/@annikabkr
-@klauspforr@mastodon.social,Klaus Pforr,https://mastodon.social/@klauspforr
-@thhaase@social.tchncs.de,Thomas Haase,https://social.tchncs.de/@thhaase
-@karengregory@mastodon.social,Karen Gregory,https://mastodon.social/@karengregory
-@arko23@mastodon.social,A. Koevel,https://mastodon.social/@arko23
-@kjhealy@mastodon.social,Kieran Healy,https://mastodon.social/@kjhealy
-@aoberg@rheinneckar.social,Achim Oberg ,https://rheinneckar.social/@aoberg
-@allartmarkets@mstdn.social,Liz Mcfall,https://mstdn.social/@allartmarkets
-@cameroncampbell@mstdn.social,Cameron Campbell,https://mstdn.social/@cameroncampbell
-@PaulWeinheimer@mastodon.social,Paul Weinheimer,https://mastodon.social/@PaulWeinheimer
-@Ninhowsky@mastodon.social,Nina,https://mastodon.social/@Ninhowsky
-@janguenth@mastodon.social,Jan* Guenth* von Friedenstab,https://mastodon.social/@janguenth
