@@ -49,6 +49,7 @@ function printSociologistsOnWP(data) {
       faultylinescounter += 1;
     }
   }
+  //prints number of lines that could not correctly be rendered from the csv file it the log
   console.log(faultylinescounter + " line(s) from csv not rendered (expected value: 1)")
 }
 
