@@ -108,39 +108,9 @@ function createSelectedCsv() {
 
     link.click(); // This will download the data file named "my_mastodon_sociologists.csv".
 
-  }
-
-  function createAllCsv() {
-    console.log("Button createAllCsv pushed");
-    var values = [];
-    console.log(allsociologists_complete["data"].length);
-    for (var i = 0; i < allsociologists_complete["data"].length; i++){
-      var sociologist = allsociologists_complete["data"][i];
-      console.log(sociologis¢["account"]);
-      if (sociologist["account"]){
-        values.push(sociologist["account"]);
-      }
-
-      //create array with collected values
-      var csvFileData = [["Account address", "Show boosts"]];
-      for (var i = 0; i < values.length; i++) {
-        csvFileData.push([values[i], "true"]);
-      }
-
-      // merge data from array to csv
-      let csvFile = "data:text/csv;charset=utf-8,"
-      + csvFileData.map(e => e.join(",")).join("\n");
-
-      var encodedUri = encodeURI(csvFile);
-      var link = document.createElement("a");
-      link.setAttribute("href", encodedUri);
-      link.setAttribute("download", "my_mastodon_sociologists.csv");
-      document.body.appendChild(link); // Required for FF
-
-      link.click(); // This will download the data file named "my_mastodon_sociologists.csv".
-
-
-
-    }
-
 }
+
+function createAllCsv() {
+  selectAll();
+  createSelectedCsv();
+  }
