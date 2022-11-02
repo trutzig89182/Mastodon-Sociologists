@@ -58,7 +58,7 @@ fieldset {
   border-radius: 4px;
 }
 
-/* spacing befor "get all" button */
-#all_csv_button {
-  margin-left: 15px;
+/* spacing between "none" and "get all" button */
+#none_button {
+  margin-right: 15px;
 }
