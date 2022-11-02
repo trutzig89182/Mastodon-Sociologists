@@ -5,3 +5,8 @@ body {
 
 h1 {
 }
+
+/* spacing befor "get all" button */
+#all_csv_button {
+  margin-left: 15px;
+}

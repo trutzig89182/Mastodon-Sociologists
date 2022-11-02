@@ -115,4 +115,9 @@ function createSelectedCsv() {
 
     link.click(); // This will download the data file named "my_mastodon_sociologists.csv".
 
-  }
+}
+
+function createAllCsv() {
+  selectAll();
+  createSelectedCsv();
+}
