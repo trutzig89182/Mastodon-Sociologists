@@ -1,100 +1,108 @@
-document.getElementById("all_button").addEventListener("click", selectAll);
-document.getElementById("none_button").addEventListener("click", selectNone);
-document.getElementById("selected_button").addEventListener("click", createSelectedCsv);
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('resources/sociologists.csv')
+  .then(function (response) {
+    response.text().then (function (csv) {
+      printSociologistsOnWP(csv)
+    })
+  })
 
-
-
-$(document).ready(function() {
-  console.log( "ready!" );
-  $.ajax({
-    type: "GET",
-    url: "resources/sociologists.csv",
-    dataType: "text",
-    success: function(data) {
-      printSociologistsOnWP(data); //define your own function
-    }
-  });
-});
+  // Add event listeners
+  document.getElementById("all_button").addEventListener("click", selectAll)
+  document.getElementById("none_button").addEventListener("click", selectNone)
+  document.getElementById("selected_button").addEventListener("click", createSelectedCsv)
+})
 
 // parses csv string into json and creates checkbox for each item on index.html
 function printSociologistsOnWP(data) {
-  console.log(data);
-  var allsociologists_complete = Papa.parse(data, {header: true}); // parses csv to json
-  var faultylinescounter = 0;
-  for (var i = 0; i < allsociologists_complete["data"].length; i++){
+  const sociologists = Papa.parse(data, { header: true }) // parses csv to json
+  let faultylinescounter = 0
 
-    var sociologist = allsociologists_complete["data"][i];
-    if (sociologist["account"]){
-      var checkbox = document.createElement('input');
-      checkbox.type = "checkbox";
-      checkbox.name = "selected_sociologists";
-      checkbox.value = sociologist["account"];
-      checkbox.id = "sociologist" + i;
-      var label = document.createElement('label');
-      label.htmlFor = "id";
-      label.appendChild(document.createTextNode(sociologist["account"] + " (" + sociologist["name"] + "), "));
-      var profilelink = document.createElement('a');
-      profilelink.href = sociologist["link"];
-      profilelink.target = "_blank";
-      const linkname = document.createTextNode(sociologist["link"]);
-      profilelink.appendChild(linkname);
-      const linebreak = document.createElement('br');
+  const container = document.getElementById("sociologists_list")
 
-      document.getElementById("sociologists_list").appendChild(checkbox);
-      document.getElementById("sociologists_list").appendChild(label);
-      document.getElementById("sociologists_list").appendChild(profilelink);
-      document.getElementById("sociologists_list").appendChild(linebreak);
-
-    } else {
-      faultylinescounter += 1;
+  for (const sociologist of sociologists.data) {
+    if (!('account' in sociologist) || sociologist.account.trim() === '') {
+      faultylinescounter++
+      continue
     }
+
+    // Structure:
+    // <div class="input-list-item">
+    //   <input name="selected_sociologists" value="sociologist.account" id="sociologist.account">
+    //   <label for="sociologist.account">Account (name)</label>
+    //   <a href="link">Link (without https)</a>
+    // </div>
+
+    const wrapper = document.createElement('div')
+    wrapper.classList.add('input-list-item')
+
+    const input = document.createElement('input')
+    input.value = sociologist.account
+    input.type = 'checkbox'
+    input.name = "selected_sociologists"
+    input.setAttribute('id', sociologist.account)
+
+    wrapper.appendChild(input)
+
+    const label = document.createElement('label')
+    label.setAttribute('for', sociologist.account)
+    label.textContent = `${sociologist.account} (${sociologist.name}) `
+
+    wrapper.appendChild(label)
+
+    if ('link' in sociologist && sociologist.link.trim() !== '') {
+      const profileLink = document.createElement('a')
+      profileLink.textContent = sociologist.link.replace('https://', '')
+      profileLink.setAttribute('href', sociologist.link)
+      profileLink.setAttribute('target', '_blank')
+      wrapper.appendChild(profileLink)
+    }
+
+    container.appendChild(wrapper)
   }
-  //prints number of lines that could not correctly be rendered from the csv file it the log
-  console.log(faultylinescounter + " line(s) from csv not rendered (expected value: 1)")
+
+  if (faultylinescounter > 1) {
+    console.warn(faultylinescounter + " line(s) from csv not rendered (expected value: 1)")
+  }
 }
 
 
-function selectAll() {
-    // selecting all checkboxes
-    // of group language
-    var checkboxes = document.getElementsByName('selected_sociologists');
-    var values = [];
-    // looping through all checkboxes
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = true;
-      values.push(checkboxes[i].value);
+/**
+ * Selects all checkboxes on the page
+ */
+function selectAll () {
+    for (const checkbox of document.getElementsByName('selected_sociologists')) {
+      checkbox.checked = true
     }
 }
 
-function selectNone() {
-    // selecting all checkboxes
-    // of group language
-    var checkboxes = document.getElementsByName('selected_sociologists');
-    var values = [];
-    // looping through all checkboxes
-    for (var i = 0; i < checkboxes.length; i++) {
-      checkboxes[i].checked = false;
-      values.push(checkboxes[i].value);
-    }
+/**
+ * Deselects all checkboxes on the page
+ */
+function selectNone () {
+  for (const checkbox of document.getElementsByName('selected_sociologists')) {
+    checkbox.checked = false
+  }
 }
 
 function createSelectedCsv() {
     // get checked accounts from checkboxes
-    var checkboxes = document.querySelectorAll('input[name="selected_sociologists"]');
-    var values = [];
+    const checkboxes = document.querySelectorAll('input[name="selected_sociologists"]')
+    const values = []
     // looping through all checkboxes
     // if checked property is true then push
-    for (var i = 0; i < checkboxes.length; i++) {
-      if (checkboxes[i].checked == true) {
-        values.push(checkboxes[i].value);
+    for (const checkbox of document.querySelectorAll('input[name="selected_sociologists"]')) {
+      if (checkbox.checked) {
+        values.push(checkbox.value)
       }
     }
 
 
     //create array with collected values
-    var csvFileData = [["Account address", "Show boosts"]];
-    for (var i = 0; i < values.length; i++) {
-      csvFileData.push([values[i], "true"]);
+    const csvFileData = [
+      ["Account address", "Show boosts"]
+    ]
+    for (const val of values) {
+      csvFileData.push([val, true])
     }
 
 
@@ -104,20 +112,20 @@ function createSelectedCsv() {
     //var csvFile = "Account address,Show boosts\n";
 
     // merge data from array to csv
-    let csvFile = "data:text/csv;charset=utf-8,"
-    + csvFileData.map(e => e.join(",")).join("\n");
+    const csvFile = "data:text/csv;charset=utf-8,"
+    + csvFileData.map(e => e.join(",")).join("\n")
 
-    var encodedUri = encodeURI(csvFile);
-    var link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "my_mastodon_sociologists.csv");
-    document.body.appendChild(link); // Required for FF
+    var encodedUri = encodeURI(csvFile)
+    var link = document.createElement("a")
+    link.setAttribute("href", encodedUri)
+    link.setAttribute("download", "my_mastodon_sociologists.csv")
+    document.body.appendChild(link) // Required for FF
 
-    link.click(); // This will download the data file named "my_mastodon_sociologists.csv".
+    link.click() // This will download the data file named "my_mastodon_sociologists.csv".
 
 }
 
-function createAllCsv() {
-  selectAll();
-  createSelectedCsv();
+function createAllCsv () {
+  selectAll()
+  createSelectedCsv()
 }

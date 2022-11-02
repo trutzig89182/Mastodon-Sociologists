@@ -1,33 +1,32 @@
-$(document).ready(function() {
-  console.log( "ready!" );
-  $.ajax({
-    type: "GET",
-    url: "resources/sociologists.csv",
-    dataType: "text",
-    success: function(data) {
-      printSociologistsOnWP(data); //define your own function
-    }
-  });
-});
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('resources/sociologists.csv')
+  .then(function (response) {
+    response.text()
+    .then (function (csv) {
+      printSociologistsOnWP(csv)
+    })
+  })
+})
 
 // parses csv string into json and creates checkbox for each item on index.html
-function printSociologistsOnWP(data) {
-  console.log(data);
-  var allsociologists_complete = Papa.parse(data, {header: true}); // parses csv to json
-  var faultylinescounter = 0;
-  for (var i = 0; i < allsociologists_complete["data"].length; i++){
+function printSociologistsOnWP (data) {
+  const allSociologists = Papa.parse(data, { header: true }) // parses csv to json
+  let faultylinescounter = 0
 
-    var sociologist = allsociologists_complete["data"][i];
-    if (sociologist["account"]){
-      var account_for_post = document.createTextNode(sociologist["account"] + " (" + sociologist["name"] + ")");
-      const linebreak = document.createElement('br');
-      document.getElementById("list_for_mastodon").appendChild(account_for_post);
-      document.getElementById("list_for_mastodon").appendChild(linebreak);
-
+  const container = document.getElementById('list_for_mastodon') // ul element
+  
+  for (const sociologist of allSociologists.data) {
+    if ('account' in sociologist && sociologist.account.trim() !== '') {
+      const li = document.createElement('li')
+      li.textContent = `${sociologist.account} (${sociologist.name})`
+      container.appendChild(li)
     } else {
-      faultylinescounter += 1;
+      faultylinescounter++
     }
   }
+
   //prints number of lines that could not correctly be rendered from the csv file it the log
-  console.log(faultylinescounter + " line(s) from csv not rendered (expected value: 1)")
+  if (faultylinescounter > 1) {
+    console.warn(faultylinescounter + " line(s) from csv not rendered (expected: 1)")
+  }
 }
