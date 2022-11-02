@@ -1,6 +1,5 @@
 document.getElementById("all_button").addEventListener("click", selectAll);
 document.getElementById("none_button").addEventListener("click", selectNone);
-document.getElementById("all_csv_button").addEventListener("click", createAllCsv);
 document.getElementById("selected_button").addEventListener("click", createSelectedCsv);
 
 
@@ -19,6 +18,7 @@ $(document).ready(function() {
 
 // parses csv string into json and creates checkbox for each item on index.html
 function printSociologistsOnWP(data) {
+  console.log(data);
   var allsociologists_complete = Papa.parse(data, {header: true}); // parses csv to json
   var faultylinescounter = 0;
   for (var i = 0; i < allsociologists_complete["data"].length; i++){
@@ -90,11 +90,18 @@ function createSelectedCsv() {
       }
     }
 
+
     //create array with collected values
     var csvFileData = [["Account address", "Show boosts"]];
     for (var i = 0; i < values.length; i++) {
       csvFileData.push([values[i], "true"]);
     }
+
+
+
+
+    // define header for csv
+    //var csvFile = "Account address,Show boosts\n";
 
     // merge data from array to csv
     let csvFile = "data:text/csv;charset=utf-8,"
@@ -113,4 +120,4 @@ function createSelectedCsv() {
 function createAllCsv() {
   selectAll();
   createSelectedCsv();
-  }
+}
