@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('resources/sociologists.csv')
+  fetch('resources/users.csv')
   .then(function (response) {
     response.text().then (function (csv) {
-      printSociologistsOnWP(csv)
+      printUsersOnWP(csv)
     })
   })
 
@@ -13,22 +13,22 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 // parses csv string into json and creates checkbox for each item on index.html
-function printSociologistsOnWP(data) {
-  const sociologists = Papa.parse(data, { header: true }) // parses csv to json
+function printUsersOnWP(data) {
+  const users = Papa.parse(data, { header: true }) // parses csv to json
   let faultylinescounter = 0
 
-  const container = document.getElementById("sociologists_list")
+  const container = document.getElementById("users_list")
 
-  for (const sociologist of sociologists.data) {
-    if (!('account' in sociologist) || sociologist.account.trim() === '') {
+  for (const user of users.data) {
+    if (!('account' in user) || user.account.trim() === '') {
       faultylinescounter++
       continue
     }
 
     // Structure:
     // <div class="input-list-item">
-    //   <input name="selected_sociologists" value="sociologist.account" id="sociologist.account">
-    //   <label for="sociologist.account">Account (name)</label>
+    //   <input name="selected_users" value="user.account" id="user.account">
+    //   <label for="user.account">Account (name)</label>
     //   <a href="link">Link (without https)</a>
     // </div>
 
@@ -36,23 +36,23 @@ function printSociologistsOnWP(data) {
     wrapper.classList.add('input-list-item')
 
     const input = document.createElement('input')
-    input.value = sociologist.account
+    input.value = user.account
     input.type = 'checkbox'
-    input.name = "selected_sociologists"
-    input.setAttribute('id', sociologist.account)
+    input.name = "selected_users"
+    input.setAttribute('id', user.account)
 
     wrapper.appendChild(input)
 
     const label = document.createElement('label')
-    label.setAttribute('for', sociologist.account)
-    label.textContent = `${sociologist.account} (${sociologist.name}) `
+    label.setAttribute('for', user.account)
+    label.textContent = `${user.account} (${user.name}) `
 
     wrapper.appendChild(label)
 
-    if ('link' in sociologist && sociologist.link.trim() !== '') {
+    if ('link' in user && user.link.trim() !== '') {
       const profileLink = document.createElement('a')
-      profileLink.textContent = sociologist.link.replace('https://', '')
-      profileLink.setAttribute('href', sociologist.link)
+      profileLink.textContent = user.link.replace('https://', '')
+      profileLink.setAttribute('href', user.link)
       profileLink.setAttribute('target', '_blank')
       wrapper.appendChild(profileLink)
     }
@@ -70,7 +70,7 @@ function printSociologistsOnWP(data) {
  * Selects all checkboxes on the page
  */
 function selectAll () {
-    for (const checkbox of document.getElementsByName('selected_sociologists')) {
+    for (const checkbox of document.getElementsByName('selected_users')) {
       checkbox.checked = true
     }
 }
@@ -79,18 +79,18 @@ function selectAll () {
  * Deselects all checkboxes on the page
  */
 function selectNone () {
-  for (const checkbox of document.getElementsByName('selected_sociologists')) {
+  for (const checkbox of document.getElementsByName('selected_users')) {
     checkbox.checked = false
   }
 }
 
 function createSelectedCsv() {
     // get checked accounts from checkboxes
-    const checkboxes = document.querySelectorAll('input[name="selected_sociologists"]')
+    const checkboxes = document.querySelectorAll('input[name="selected_users"]')
     const values = []
     // looping through all checkboxes
     // if checked property is true then push
-    for (const checkbox of document.querySelectorAll('input[name="selected_sociologists"]')) {
+    for (const checkbox of document.querySelectorAll('input[name="selected_users"]')) {
       if (checkbox.checked) {
         values.push(checkbox.value)
       }
@@ -118,10 +118,10 @@ function createSelectedCsv() {
     var encodedUri = encodeURI(csvFile)
     var link = document.createElement("a")
     link.setAttribute("href", encodedUri)
-    link.setAttribute("download", "my_mastodon_sociologists.csv")
+    link.setAttribute("download", "my_mastodon_users.csv")
     document.body.appendChild(link) // Required for FF
 
-    link.click() // This will download the data file named "my_mastodon_sociologists.csv".
+    link.click() // This will download the data file named "my_mastodon_users.csv".
 
 }
 
