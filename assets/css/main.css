@@ -1,6 +1,8 @@
 body {
-  margin-left: 60px;
   margin-right: 60px;
+  margin-left: 60px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
