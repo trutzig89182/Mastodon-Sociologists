@@ -9,7 +9,11 @@ The initial list was and it’s context can be found here (https://www.perspekti
 
 Yes, basically you just have to fork the repro. There are two files that you will need to change. The Text in index.html and the accounts that are stored in resources/sociologists.csv. Please keep the name of this file (or change it in assets/js/createcsv.js, too).
 
+The branch [FollowingsForMastodon_desociologizes](https://github.com/trutzig89182/Mastodon-Sociologists/tree/FollowingsForMastodon_desociologized) can be interesting for you. W try to strip it of the sociology specific content in order to make it easier to use the code for other contexts.
+
 You can publish your web app directly from the repository. For this, go to “Settings” and then choose “pages” in the left menue.
+
+Please make sure to only provid account information with the consent of the account in your csv file and webpage.
 
 ## Documentation
 
