@@ -24,6 +24,11 @@ Any file with the colums account,name,url will do.
 ### tootformat.html
 The page tootformat.html renders all accounts from the csv as ”account (name)”. This offers you a more readable format which you can copy to your posts in Mastodon.
 
+### metatags & preview image
+Metatags help you to change how the webpage is previewed in social media. You can find them in the `<head>` of `index.html`. Adapt them to your pages name etc.
+If you want to use a preview picture, put it in `resources/images/` and name it `preview-image.png`.
+
+
 ## License
 
 The repository can be used under GNU General Public Licese v3, except the /resources/sociologists.csv-file, which can only be used with explicit permission by the authors.
