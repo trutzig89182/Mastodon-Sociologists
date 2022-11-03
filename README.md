@@ -6,8 +6,6 @@ This repository provides a most simple web app that helps to bulk follow sociolo
 
 Yes, basically you just have to fork the repro. There are two files that you will need to change. The Text in index.html and the accounts that are stored in `resources/users.csv`. Please keep the name of this file (or change it in `assets/js/createcsv.js` and `assets/accountsfortoots.js`, too).
 
-The branch [FollowingsForMastodon_desociologizes](https://github.com/trutzig89182/Mastodon-Sociologists/tree/FollowingsForMastodon_desociologized) can be interesting for you. We try to strip it of the sociology specific content in order to make using the code for other topics easier.
-
 You can publish your web app directly from the repository. For this, go to “Settings” and then choose “pages” in the left menue.
 
 **Please make sure to only provid account information with the consent of the account in your csv file and webpage!** Even though we try to keep the stored information minimal, make sure everybody is comfortable with being on your list. Also keep in mind, that if you delete a name from the file, it will still be in the repositories history.
