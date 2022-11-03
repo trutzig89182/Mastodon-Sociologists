@@ -25,6 +25,10 @@ The page `tootformat.html` renders all accounts from the csv file as “account 
 Metatags help you to change how the webpage is previewed in social media. You can find them in the `<head>` of `index.html`. Adapt them to your pages name etc.
 If you want to use a preview picture, put it in `resources/images/` and name it `preview-image.png`.
 
+### create your own preview image for the page
+In the `folder create-preview-picture/` you find the file `preview-picture.sla`. It is a template for your XY on Mastodon preview image. Please load the `Mastodon Mascot (Greeting).png` image from https://commons.wikimedia.org/wiki/File:Mastodon_Mascot_(Greeting).png and save it in the same folder. Now you can open `preview-picture.sla` with the FOSS layout program [Scribus](https://www.scribus.net/). You probably will have to relink the images within the file to the PNG you downloaded. Perhaps you will also have to choose another font for the text.
+Once you have done that, you can simply change the Title. I suggest you also change the background collour to make the preview images more distinguishabel.
+
 
 ## License
 
