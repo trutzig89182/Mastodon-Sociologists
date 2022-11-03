@@ -19,6 +19,9 @@ div#app {
 }
 
 /* This is the main form used to select users to generate a CSV from */
+form#main-form {
+  margin-top: 10px;
+}
 form#main-form fieldset legend {
   font-weight: bold;
 }
