@@ -1,7 +1,7 @@
 // CONSTANTS/CONFIG
 
 // The filename that will be suggested for the users when downloading
-const CSV_DOWNLOAD_NAME = 'mastodon_sociologists.csv'
+const CSV_DOWNLOAD_NAME = 'my_account_list.csv'
 
 // These functions return element(s) from the page. We put them here at the top
 // so that we can change the IDs if necessary
