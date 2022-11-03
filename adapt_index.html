@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Theese informations will be shown in the tab preview and in social media preview -->
+    <title>XXX Add your title</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- Metatags for facebook, google etc. -->
+    <meta property="og:title" content="XXX Add your title" />
+    <meta
+      property="og:description"
+      content="XXX Add a brief Description"
+    />
+    <meta
+      property="og:image"
+      content="XXX add full url to preview-image"
+    />
+    <meta
+      property="og:url"
+      content="XXX add full link to webpage"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Metatags for twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="XXX Add full url to webpage"
+    />
+    <meta
+       property="twitter:title"
+       content="XXX Add title"
+    />
+    <meta
+      property="twitter:description"
+      content="XXX Add brief description"
+    />
+    <meta
+      property="twitter:image"
+      content="XXX Add full link to preview-image"
+    />
+    <!-- loads styling and scripts -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/papaparse.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+    <!-- link to blog post that lists different following lists based on https://github.com/trutzig89182/Mastodon-Sociologists -->
+    <a
+      href="https://github.com/nathanlesage/academics-on-mastodon"
+      >⇽ more lists from other disciplines</a
+    >
+    <!-- Page title -->
+    <h1>XXX Add page title</h1>
+    <!-- Subtitle -->
+    <h2>XXX Add subtitle or delete line</h2>
+    <!-- Description paragraph -->
+    <p>
+        XXX Add your description of your page for the users. What does this page offer? How does it work?
+    </p>
+
+    <!-- Buttons - do not change -->
+      <div>
+        <button type="button" id="select-all-users">Select all</button>
+        <button type="button" id="select-none-users">Select none</button>
+        <button type="button" id="get-complete-csv">Get CSV for entire list</button>
+      </div>
+
+      <!-- checkbox section - do not change -->
+      <form id="main-form" method="get" action="#">
+        <fieldset>
+          <legend>
+            Accounts by handle, name, and profile link (most recent first)
+          </legend>
+          <div id="user-list"></div>
+          <button type="button" id="generate-csv">Get CSV for selected accounts</button>
+        </fieldset>
+      </form>
+
+      <!-- further information and contact-->
+      <p>
+        XXX Add further information, f.i. how you gather your data and whom to contact.
+      </p>
+
+      <!-- ruler that seperates the footer -->
+      <hr />
+
+      <!-- footer -->
+      <footer>
+        <p>
+          XXX Include your footer informations here.
+        </p>
+
+        <!-- Suggested reference to the webaps main repository. Please feel free to adapt to your needs based on the licens specified here "https://github.com/trutzig89182/Mastodon-Sociologists"-->
+        <p>
+          <tiny>
+              Based on <a href="https://trutzig89182.github.io/Mastodon-Sociologists/">Sociologists on Mastodon</a> by
+              <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">David Adler</a>,
+              <a href="https://social.tchncs.de/@thhaase" target="_blank">Thomas Haase</a>
+              &amp;
+              <a href="https://scholar.social/@hendrikerz" target="_blank">Hendrik Erz</a>.
+              If you want to contribute, please visit the
+              <a href="https://github.com/trutzig89182/Mastodon-Sociologists" target="_blank">GitHub-Repository</a>.
+          </tiny>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
