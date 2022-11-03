@@ -26,8 +26,8 @@ Metatags help you to change how the webpage is previewed in social media. You ca
 If you want to use a preview picture, put it in `resources/images/` and name it `preview-image.png`.
 
 ### create your own preview image for the page
-In the `folder create-preview-picture/` you find the file `preview-picture.sla`. It is a template for your XY on Mastodon preview image. Please load the `Mastodon Mascot (Greeting).png` image from https://commons.wikimedia.org/wiki/File:Mastodon_Mascot_(Greeting).png and save it in the same folder. Now you can open `preview-picture.sla` with the FOSS layout program [Scribus](https://www.scribus.net/). You probably will have to relink the images within the file to the PNG you downloaded. Perhaps you will also have to choose another font for the text.
-Once you have done that, you can simply change the Title. I suggest you also change the background collour to make the preview images more distinguishabel.
+In the `folder create-preview-image/` you find the file `preview-image.sla`. It is a template for your XY on Mastodon preview image. Please load the `Mastodon Mascot (Greeting).png` image from https://commons.wikimedia.org/wiki/File:Mastodon_Mascot_(Greeting).png and save it in the same folder. Now you can open `preview-image.sla` with the FOSS layout program [Scribus](https://www.scribus.net/). You probably will have to relink the images within the file to the PNG you downloaded. Perhaps you will also have to choose another font for the text.
+Once you have done that, you can simply change the Title. I suggest you also change the background collour to make the preview images more distinguishable. Export your image as PNG. Make sure your file ist named preview-image.png and store it in `/resources/images/`. In one last step you have to adapt the links to your file in the Metatag section in `index.html`.
 
 
 ## License
