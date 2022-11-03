@@ -74,6 +74,6 @@ fieldset {
 }
 
 /* spacing between "none" and "get all" button */
-#none_button {
+button#select-none-users {
   margin-right: 15px;
 }
