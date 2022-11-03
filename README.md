@@ -10,6 +10,8 @@ You can publish your web app directly from the repository. For this, go to “Se
 
 **Please make sure to only provid account information with the consent of the account in your csv file and webpage!** Even though we try to keep the stored information minimal, make sure everybody is comfortable with being on your list. Also keep in mind, that if you delete a name from the file, it will still be in the repositories history.
 
+If you have created a “XY on Mastodon” page on any academic or scientific topic, please add it to the list [here](https://github.com/nathanlesage/academics-on-mastodon) or just contact us. If it’s on any other topic, let us know, too, so we can share it.
+
 ## Documentation
 
 ### csv file
