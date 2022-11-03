@@ -6,69 +6,103 @@
 
     <!-- Metatags for facebook, google etc. -->
     <meta property="og:title" content="Sociologists on Mastodon" />
-    <meta property="og:description" content="A list of sociologists in the Fediverse" />
-    <meta property="og:image" content="https://trutzig89182.github.io/Mastodon-Sociologists/resources/images/preview_picture.png" />
-    <meta property="og:url" content="https://trutzig89182.github.io/Mastodon-Sociologists/" />
+    <meta
+      property="og:description"
+      content="A list of sociologists in the Fediverse"
+    />
+    <meta
+      property="og:image"
+      content="https://trutzig89182.github.io/Mastodon-Sociologists/resources/images/preview_picture.png"
+    />
+    <meta
+      property="og:url"
+      content="https://trutzig89182.github.io/Mastodon-Sociologists/"
+    />
     <meta property="og:type" content="website" />
 
     <!-- Metatags for twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://trutzig89182.github.io/Mastodon-Sociologists/" />
+    <meta
+      name="twitter:url"
+      content="https://trutzig89182.github.io/Mastodon-Sociologists/"
+    />
     <meta property="twitter:title" content="Sociologists on Mastodon" />
-    <meta property="twitter:description" content="A list of sociologists in the Fediverse" />
-    <meta property="twitter:image" content="https://trutzig89182.github.io/Mastodon-Sociologists/resources/images/preview_picture.png" />
+    <meta
+      property="twitter:description"
+      content="A list of sociologists in the Fediverse"
+    />
+    <meta
+      property="twitter:image"
+      content="https://trutzig89182.github.io/Mastodon-Sociologists/resources/images/preview_picture.png"
+    />
 
-    <link rel="stylesheet" href="assets/css/main.css">
-
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/papaparse.min.js"></script>
   </head>
   <body>
     <div id="app">
-    <h1>Sociologists on Mastodon</h1>
-    <h2>Follow all your favourite sociologists</h2>
-    <p>You want to get in touch with sociologists from around the world in <a href="https://en.wikipedia.org/wiki/Mastodon_(software)" target="_blank">Mastodon</a>?
-      This page lists accounts from sociologists and sociological institutions and offers an easy method to follow multiple accounts at once. Just decide if you want to follow all or only some of the accounts listed below.
-      You are provided with a .csv-file, which you can upload in Mastodon in order to follow all accounts included.
-      <a href="instructions.pdf" target="_blank">Here</a> you can find an short instruction, on how to do this.
-    </p>
-
-    <div>
+      <h1>Sociologists on Mastodon</h1>
+      <h2>Follow all your favourite sociologists</h2>
       <p>
-        <button type="button" id="all_button">Select all</button>
-        <button type="button" id="none_button">Select none</button>
-        <button type="button" id="all_csv_button">Get csv for entire list</button>
+        You want to get in touch with sociologists from around the world on
+        <a
+          href="https://en.wikipedia.org/wiki/Mastodon_(software)"
+          target="_blank"
+          >Mastodon</a
+        >? This page lists accounts from sociologists and sociological
+        institutions and offers an easy method to follow multiple accounts at
+        once. Just decide if you want to follow all or only some of the accounts
+        listed below. You are provided with a .csv-file, which you can upload in
+        Mastodon in order to follow all accounts included.
+        <a href="instructions.pdf" target="_blank">Here</a> you can find an
+        short instruction, on how to do this.
       </p>
+
+      <div>
+        <button type="button" id="select-all-users">Select all</button>
+        <button type="button" id="select-none-users">Select none</button>
+        <button type="button" id="get-complete-csv">Get CSV for entire list</button>
+      </div>
+
+      <form id="main-form" method="get" action="#">
+        <fieldset>
+          <legend>
+            Sociologists by account, name, and profile link (most recent first)
+          </legend>
+
+          <div id="user-list"></div>
+
+          <button type="button" id="generate-csv">Get CSV for selected accounts</button>
+        </fieldset>
+      </form>
+
+      <p>
+        Full names are only included if they are shown in the profile or on
+        explicit demand. You want to get on the list? Or you don’t want to be on
+        it anymore? Please contact me under
+        <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">@perspektivbrocken@social.tchncs.de</a>
+        or
+        <a href="mailto:david.adler@uni-oldenburg.de" target="_blank">via email</a>.
+      </p>
+
+      <p>
+        You are interested in sociological content on mastodon, but you don’t
+        want to be added to the list? Then you could consider follwing the group
+        <a href="https://a.gup.pe/u/sociology" target="_blank">@sociology@a.gup.pe</a>.
+      </p>
+
+      <hr />
+
+      <footer>
+        Brought to you by
+        <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">David Adler</a>,
+        <a href="https://social.tchncs.de/@thhaase" target="_blank">Thomas Haase</a>
+        &amp;
+        <a href="https://scholar.social/@hendrikerz" target="_blank">Hendrik Erz</a>.
+        If you want to contribute please visit our
+        <a href="https://github.com/trutzig89182/Mastodon-Sociologists" target="_blank">GitHub-Repository</a>.
+      </footer>
     </div>
-
-    <form method="post" action="/Tests/Post/">
-      <fieldset>
-          <legend><b>Sociologists by account, name, and profile link (most recent first)</b></legend>
-          <div id="users_list">
-          </div>
-          <br>
-          <!-- <input type="submit" value="Get selected accounts" id="selected_button"/> -->
-          <button type="button" id="selected_button">Get csv file for selected accounts</button>
-      </fieldset>
-    </form>
-
-    <p>
-      Full names are only included if they are shown in the profile or on explicit demand.
-      You want to get on the list? Or you don’t want to be on it anymore? Please contact me under <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">@perspektivbrocken@social.tchncs.de</a> or <a href="mailto:david.adler@uni-oldenburg.de" target="_blank">via email</a>.
-    </p>
-    <p>
-      You are interested in sociological content on mastodon, but you don’t want to be added to the list? Then you could consider follwing the group <a href="https://a.gup.pe/u/sociology" target="_blank">@sociology@a.gup.pe</a>.
-    </p>
-    <hr>
-    <p>
-      <small>
-        <i>Brought to you by <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">David Adler</a>, <a href="https://social.tchncs.de/@thhaase" target="_blank">Thomas Haase</a> & <a href="https://scholar.social/@hendrikerz" target="_blank">Hendrik Erz</a>. If you want to contribute please visit our <a href="https://github.com/trutzig89182/Mastodon-Sociologists" target="_blank">GitHub-Repository</a>.</i>
-      </small>
-    </p>
-  </div>
-    <!-- Scripts -->
-      <script src="assets/js/papaparse.min.js"></script>
-      <script src="assets/js/createcsv.js"></script>
-
   </body>
-
-
 </html>
