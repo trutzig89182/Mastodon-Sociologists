@@ -77,3 +77,8 @@ fieldset {
 button#select-none-users {
   margin-right: 15px;
 }
+
+/* spacing before "Get CSV for selected accounts" */
+button#generate-csv {
+  margin-top: 10px;
+}
