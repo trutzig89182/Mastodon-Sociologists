@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Theese informations will be shown in the tab preview and in social media preview -->
     <title>Sociologists on Mastodon</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
@@ -26,7 +27,10 @@
       name="twitter:url"
       content="https://trutzig89182.github.io/Mastodon-Sociologists/"
     />
-    <meta property="twitter:title" content="Sociologists on Mastodon" />
+    <meta
+       property="twitter:title"
+       content="Sociologists on Mastodon"
+    />
     <meta
       property="twitter:description"
       content="A list of sociologists in the Fediverse"
@@ -35,16 +39,25 @@
       property="twitter:image"
       content="https://trutzig89182.github.io/Mastodon-Sociologists/resources/images/preview_picture.png"
     />
-
+    <!-- loads styling and scripts -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="assets/js/app.js"></script>
     <script src="assets/js/papaparse.min.js"></script>
   </head>
+
   <body>
     <div id="app">
-      <h1>Sociologists on Mastodon</h1>
-      <h2>Follow all your favourite sociologists</h2>
-      <p>
+    <!-- link to blog post that lists different following lists based on https://github.com/trutzig89182/Mastodon-Sociologists -->
+    <a
+      href="https://www.perspektivbrocken.org/en/2022/11/03/academics-on-mastodon-lets-connect/"
+      >⇽ more lists from other disciplines</a
+    >
+    <!-- Page title -->
+    <h1>Sociologists on Mastodon</h1>
+    <!-- Subtitle -->
+    <h2>Follow all your favourite sociologists</h2>
+    <!-- Description paragraph -->
+    <p>
         You want to get in touch with sociologists from around the world on
         <a
           href="https://en.wikipedia.org/wiki/Mastodon_(software)"
@@ -59,24 +72,28 @@
         short instruction, on how to do this.
       </p>
 
+    <!-- Buttons - do not change -->
+
+
+
       <div>
         <button type="button" id="select-all-users">Select all</button>
         <button type="button" id="select-none-users">Select none</button>
         <button type="button" id="get-complete-csv">Get CSV for entire list</button>
       </div>
 
+      <!-- checkbox section - do not change -->
       <form id="main-form" method="get" action="#">
         <fieldset>
           <legend>
-            Sociologists by account, name, and profile link (most recent first)
+            Accounts by account, name, and profile link (most recent first)
           </legend>
-
           <div id="user-list"></div>
-
           <button type="button" id="generate-csv">Get CSV for selected accounts</button>
         </fieldset>
       </form>
 
+      <!-- further information and contact-->
       <p>
         Full names are only included if they are shown in the profile or on
         explicit demand. You want to get on the list? Or you don’t want to be on
@@ -94,6 +111,7 @@
 
       <hr />
 
+      <!-- footer -->
       <footer>
         Brought to you by
         <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">David Adler</a>,
