@@ -10,7 +10,7 @@ The branch [FollowingsForMastodon_desociologizes](https://github.com/trutzig8918
 
 You can publish your web app directly from the repository. For this, go to “Settings” and then choose “pages” in the left menue.
 
-Please make sure to only provid account information with the consent of the account in your csv file and webpage.
+**Please make sure to only provid account information with the consent of the account in your csv file and webpage!** Even though we try to keep the stored information minimal, make sure everybody is comfortable with being on your list. Also keep in mind, that if you delete a name from the file, it will still be in the repositories history.
 
 ## Documentation
 
