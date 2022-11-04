@@ -4,7 +4,7 @@ This repository provides a most simple web app that helps to bulk follow sociolo
 
 ## Can I use this for my discipline/peer group?
 
-> **Please make sure to only provid account information with the consent of the account in your csv file and webpage!** Even though we try to keep the stored information minimal, make sure everybody is comfortable with being on your list. Also keep in mind, that if you delete a name from the file, it will still be in the repositories history.
+> **Please make sure to only add account information in your csv file and webpage with the consent of the owner of the account!** Even though we are keeping minimal stored information, make sure everybody has agreed to be on your list. Keep in mind, that if you delete a name from the file, it will still be in the repositories history so the best security is ensuring accounts with owners that do not consent never get added to a list. Scraping publicly accessible information for accounts to add to the csv file and webpage does not gather consent.
 
 Yes, basically you just have to fork the repro. There are two files that you will need to change. The Text in index.html and the accounts that are stored in `resources/users.csv`. Please keep the name of this file (or change it in `assets/js/app.js`, too).
 
