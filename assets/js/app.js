@@ -143,14 +143,10 @@ function buildUserSelectionForm (users) {
     wrapper.appendChild(label)
 
     if ('link' in user && user.link.trim() !== '') {
-      const linkIcon = document.createElement(svg)
-      linkIcon.setAttribute('scr', 'resources/images/arrow-up-right-from-square-solid.svg')
       const profileLink = document.createElement('a')
-      prileLink.innerHTML = linkIcon
+      profileLink.textContent = user.link.replace('https://', '')
       profileLink.setAttribute('href', user.link)
       profileLink.setAttribute('target', '_blank')
-
-
       wrapper.appendChild(profileLink)
     }
 
