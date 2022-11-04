@@ -1,4 +1,3 @@
-cd .. # Move to root
 echo "Running in directory $(pwd)"
 echo "$(ls)"
 mkdir dist
