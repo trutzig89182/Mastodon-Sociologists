@@ -4,13 +4,13 @@ This repository provides a most simple web app that helps to bulk follow sociolo
 
 ## Can I use this for my discipline/peer group?
 
+> **Please make sure to only provid account information with the consent of the account in your csv file and webpage!** Even though we try to keep the stored information minimal, make sure everybody is comfortable with being on your list. Also keep in mind, that if you delete a name from the file, it will still be in the repositories history.
+
 Yes, basically you just have to fork the repro. There are two files that you will need to change. The Text in index.html and the accounts that are stored in `resources/users.csv`. Please keep the name of this file (or change it in `assets/js/app.js`, too).
 
 For your convenience, we also have included a cleaned template for your index.html. It is named `adapt-index.html`. In it, all places where you ought to fill in some specific text for your purpose start with `XXX`, in order to make them easily identifiable. Fill in the Text, rename the file to `index.html`. You can now discard of the original `index.html`. You do not need to write any html formatting, however, if you want to make multiple pararaphs, two tags could come in handy: the (`<p></p>` tag)[https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p] and the (`<a href=""></a>` tag)[https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a]. That’s it.
 
 You can publish your web app directly from the repository. For this, go to “Settings” and then choose “pages” in the left menue.
-
-> **Please make sure to only provid account information with the consent of the account in your csv file and webpage!** Even though we try to keep the stored information minimal, make sure everybody is comfortable with being on your list. Also keep in mind, that if you delete a name from the file, it will still be in the repositories history.
 
 If you have created a “XY on Mastodon” page on any academic or scientific topic, please add it to the list [here](https://github.com/nathanlesage/academics-on-mastodon) or just contact us. If it’s on any other topic, let us know, too, so we can share it.
 
