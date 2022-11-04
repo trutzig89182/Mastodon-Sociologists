@@ -1,5 +1,6 @@
 cd .. # Move to root
 echo "Running in directory $(pwd)"
+echo "$(ls)"
 mkdir dist
 cp index.html ./dist
 cp tootformat.html ./dist
