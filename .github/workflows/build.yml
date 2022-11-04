@@ -1,0 +1,57 @@
+# This workflow builds and uploads the page to the GitHub page associated with
+# this repository
+name: Build and deploy to Github pages
+# ADAPTED FROM https://github.com/actions/starter-workflows/blob/main/pages/static.yml
+
+on:
+  # Runs on pushes targeting the default branch (in our case: main)
+  push:
+    branches: [$default-branch]
+  # This toggle enables us to run the workflow manually
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one build at a time (cancel running ones if necessary)
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repo
+      - name: Checkout
+        uses: actions/checkout@v3
+
+
+      # --- --- --- FROM HERE ON BUILDING
+      - name: Setup NodeJS 16
+        uses: actions/setup-node@v1
+        with:
+          node-version: '16'
+      - name: Run build script
+      # NOTE: We have to switch this out for the real build script once we have it
+        run: |
+          ./scripts/build.sh
+
+
+      # From here on only upload and deploy
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload the "dist" directory
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
