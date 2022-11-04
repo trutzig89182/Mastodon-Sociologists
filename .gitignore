@@ -1,2 +1,5 @@
-#Mac system files
+# Mac system files
 .DS_Store
+
+# Build directory
+dist

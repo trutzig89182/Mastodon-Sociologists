@@ -1,0 +1,12 @@
+{
+  "name": "mastodon-lists",
+  "version": "1.0.0",
+  "description": "A template to build hand-curated lists of accounts to follow",
+  "main": "index.js",
+  "repository": "https://github.com/trutzig89182/Mastodon-Sociologists.git",
+  "author": "Hendrik Erz <hendrik@zettlr.com>",
+  "license": "GPL-3.0",
+  "scripts": {
+    "build": "node scripts/build.js"
+  }
+}
