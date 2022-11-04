@@ -22,10 +22,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      # Checkout the repo
+      - name: Checkout
+        uses: actions/checkout@v3
+
+
+      # --- --- --- FROM HERE ON BUILDING
       - name: Setup NodeJS 16
         uses: actions/setup-node@v1
         with:
@@ -34,16 +42,8 @@ jobs:
       # NOTE: We have to switch this out for the real build script once we have it
         run: |
           ./scripts/build.sh
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      # Checkout the repo
-      - name: Checkout
-        uses: actions/checkout@v3
+
+
       # From here on only upload and deploy
       - name: Setup Pages
         uses: actions/configure-pages@v2
