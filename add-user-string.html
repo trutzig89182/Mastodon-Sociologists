@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Theese informations will be shown in the tab preview and in social media preview -->
+    <title>SoM: create new user</title>
+    <!-- loads styling and scripts -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="assets/js/add-user-string.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+    <!-- link to blog post that lists different following lists based on https://github.com/trutzig89182/Mastodon-Sociologists -->
+    <a
+      href="https://trutzig89182.github.io/Mastodon-Sociologists/"
+      >⇽ go to Sociologists on Mastodon</a
+    >
+    <!-- Page title -->
+    <h1>Sociologists on Mastodon</h1>
+    <!-- Subtitle -->
+    <h2>create your user info</h2>
+    <!-- Description paragraph -->
+    <p>
+        Thanks for using this form to create you user entry for <a href="https://trutzig89182.github.io/Mastodon-Sociologists/" target="_blank"> Sociologists on Mastodon</a>.
+        It helps us a lot. <br>
+        This page creates a line that you can send me via Mastodon or via email.
+        We have also added the possibility to add keywords and a language code.
+        This is fully optional. We are working on an option to use them for sorting the list and keeping it useful as it grows.
+    </p>
+    <form method="post" action="#">
+      <!-- creates input fields and labels -->
+      <h5>Necessary information</h5>
+      <input type="text" id="account" name="acount" placeholder="@user@instance">
+      <label for="account"> Account</label><br><br>
+      <input type="text" id="name" name="name" placeholder="Max Musterman, or @user">
+      <label for="name"> Name (use username if you don’t want your full name included)</label><br><br>
+      <input type="url" id="url" name="url" placeholder="https://instance/@user">
+      <label for="url"> url:</label><br><br>
+      <h5>Optional</h5>
+      <input type="text" id="keyword1" name="keyword1" placeholder="Your_keyword">
+      <label for="keyword1">Keyword 1</label><br><br>
+      <input type="text" id="keyword2" name="keyword2" placeholder="Your_keyword">
+      <label for="keyword2"> Keyword 2</label><br><br>
+      <input type="text" id="keyword3" name="keyword3" placeholder="Your_keyword">
+      <label for="keyword3"> Keyword 3</label><br><br>
+      <input type="text" id="language" name="language" placeholder="fr zh">
+      <label for="language"> Main language(s) (use <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639 language code</a>)</label><br><br>
+
+      <!-- creates button  -->
+      <button type="button" id="create_new_user_entry">Create new user entry</button>
+    </form >
+
+    <h4>Your entry:</h4>
+    <p id="created_user_entry">
+    </p>
+
+    <p>
+       Send this line to me in a DM via Mastodon (<a href="https://social.tchncs.de/@perspektivbrocken" target="blank">@perspektivbrocken@social.tchns.de</a>) or <a href="mailto:david.adler@uni-oldenburg.de" target="_blank">via email</a>.
+    </p>
+
+      <!-- ruler that seperates the footer -->
+      <hr />
+
+      <!-- footer -->
+      <footer>
+
+        <!-- Suggested reference to the webaps main repository. Please feel free to adapt to your needs based on the licens specified here "https://github.com/trutzig89182/Mastodon-Sociologists"-->
+        <p>
+          <tiny>
+              <a href="https://trutzig89182.github.io/Mastodon-Sociologists/">Sociologists on Mastodon</a> by
+              <a href="https://social.tchncs.de/@perspektivbrocken" target="_blank">David Adler</a>,
+              <a href="https://social.tchncs.de/@thhaase" target="_blank">Thomas Haase</a>
+              &amp;
+              <a href="https://scholar.social/@hendrikerz" target="_blank">Hendrik Erz</a>.
+              If you want to contribute, please visit the
+              <a href="https://github.com/trutzig89182/Mastodon-Sociologists" target="_blank">GitHub-Repository</a>.
+          </tiny>
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
