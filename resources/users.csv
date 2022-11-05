@@ -1,16 +1,29 @@
 account,name,link,keywords,language
+@mmlarthur@mastodon.social,Dr. Mikaila,https://mstdn.social/@mmlarthur@mastodon.social
+jeffsheng@mstdn.social,Jeff Sheng,https://mstdn.social/@jeffsheng
+@analyticus@mastodon.social,Cees Grootes,https://mastodon.social/@analyticus
+@bencaudron@mastodon.social,Ben Caudron,https://mastodon.social/@bencaudron,technology discourse depolitization,nl en
+@hermwerf@mastodon.social,Herman van de Werfhorst,https://mastodon.social/@hermwerf
+@kimdelaat@c.im,Kim de Laat,https://c.im/@kimdelaat
+@rlynnphd@sciences.social,Randy Lynn,https://sciences.social/@rlynnphd
+@landrous@m.cmx.im,十亿光年沉默狗,https://m.cmx.im/@landrous,cultural_sociology economic_sociology intimacy,en
+@lclandivar@sciences.social,Christin Landivar,https://sciences.social/@lclandivar
+@rachelfish03@mastodon.sdf.org,Rachel Fish,https://mastodon.sdf.org/@rachelfish03,education disability race,en
+@carlnordlund@mastodon.social,Carl,https://mastodon.social/@carlnordlund
+@jessicacalarco@mastodon.social,Jess Calarco,https://mastodon.social/@jessicacalarco
+@GuzmanCesar9@mastodon.online,César Guzmán-Concha,https://mastodon.online/@GuzmanCesar9
 @anny@todon.eu,Anny N.,https://todon.eu/@anny
-@jimiadams@sciences.social,jimi adams,https://sciences.social/@jimiadams,#Social_Network_Analysis #Population_Health #diffusion,en
+@jimiadams@sciences.social,jimi adams,https://sciences.social/@jimiadams,Social_Network_Analysis Population_Health diffusion,en
 @selbstreferent@chaos.social,Daniel Guagnin,https://chaos.social/@selbstreferent,de
-@guipeti@sciences.social,Guillaume Petit,https://sciences.social/@guipeti,#democracy #political_participation #institutions,fr
-@dass@norden.social,David S,https://social.tchncs.de/web/@dass@norden.social,#Capitalism #Transformation #Digital_Sociology,de
-@Evan_Stewart@sciences.social,Evan Stewart,https://sciences.social/@Evan_Stewart,#Political_Sociology #Religion #Quantitative_Methods,en
-@matzbot@social.tchncs.de,Matthias Bottel,https://social.tchncs.de/@matzbot,#Technology #Innovation #Software,de
-@olgasara2003@nerdculture.de,Olga Sabido Ramos,https://nerdculture.de/@olgasara2003,#Theory #Emotions #Senses
-@enganhifa@mstdn.social,Juan S. Z,https://mstdn.social/@enganhifa,#cultural_change #Historico-genetic_Theory #cross-cultural_developmental_psychology
-@pedokomparator@mstdn.social,pedokomparator,https://mstdn.social/@pedokomparator,#STS #dreams,de
+@guipeti@sciences.social,Guillaume Petit,https://sciences.social/@guipeti,democracy political_participation institutions,fr en
+@dass@norden.social,David S,https://social.tchncs.de/web/@dass@norden.social,Capitalism Transformation Digital_Sociology,de
+@Evan_Stewart@sciences.social,Evan Stewart,https://sciences.social/@Evan_Stewart,Political_Sociology Religion Quantitative_Methods,en
+@matzbot@social.tchncs.de,Matthias Bottel,https://social.tchncs.de/@matzbot,Technology Innovation Software,de
+@olgasara2003@nerdculture.de,Olga Sabido Ramos,https://nerdculture.de/@olgasara2003,Theory Emotions Senses
+@enganhifa@mstdn.social,Juan S. Z,https://mstdn.social/@enganhifa,cultural_change Historico-genetic_Theory cross-cultural_developmental_psychology
+@pedokomparator@mstdn.social,pedokomparator,https://mstdn.social/@pedokomparator,STS dreams,de
 @juanjimenez@scholar.social,Juan Jiménez A.,https://scholar.social/@juanjimenez
-@katyaivanova@c.im,Katya Ivanova,https://c.im/@katyaivanova,#Family #Family_complexity #Intergenerational_solidarity,en
+@katyaivanova@c.im,Katya Ivanova,https://c.im/@katyaivanova,Family Family_complexity Intergenerational_solidarity,en
 @plouie01@sciences.social,Pat Louie,https://sciences.social/@plouie01
 @Giselinde@mstdn.social,Giselinde Kuipers,https://mstdn.social/@Giselinde,,nl
 @NoortjeMarres@mstdn.social,NoortjeMarres,https://mstdn.social/@NoortjeMarres
@@ -30,7 +43,7 @@ account,name,link,keywords,language
 @jncohen@fosstodon.org,jncohen,https://fosstodon.org/@jncohen
 @didem@mastodon.social,Didem Turkoglu,https://mastodon.social/@didem
 @CoffeeBaseball@sciences.social,Joanna Pepin,https://sciences.social/@CoffeeBaseball
-@conradhackett@mastodon.nz,Conrad Hackett,https://mastodon.nz/@conradhackett
+@conradhackett@sciences.social,Conrad Hackett,https://sciences.social/@conradhackett
 @cameroncampbell@mstdn.social,Cameron Campbell 康文林,https://mstdn.social/@cameroncampbell
 @mmin@scholar.social,Matti Minkkinen,https://scholar.social/@mmin
 @erola@fediscience.org,Jani Erola,https://fediscience.org/@erola
@@ -108,7 +121,7 @@ account,name,link,keywords,language
 @bekado@social.tchncs.de,Benjamin Doubali,https://social.tchncs.de/@bekado
 @Bindestriche@social.anoxinon.de,Bindestriche,https://social.anoxinon.de/@Bindestriche
 @bjoernkrey@troet.cafe,Björn Krey,https://mastodon.social/@bjoernkrey
-@Blaabaek@mastodon.social,Ea Hoppe Blaabæk,https://mastodon.social/@Blaabaek
+@Blaabaek@mastodon.social,Eva Hoppe Blaabæk,https://mastodon.social/@Blaabaek
 @chrishammermann@social.tchncs.de,Chris Hammermann,https://social.tchncs.de/@chrishammermann
 @DieVilla4@mastodon.social,DieVillaBraslavsky,https://mastodon.social/@DieVilla4
 @DiscourseNet@fediscience.org,DiscourseNet,https://fediscience.org/@DiscourseNet
