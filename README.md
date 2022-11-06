@@ -14,6 +14,8 @@ You can publish your web app directly from the repository. For this, go to “Se
 
 If you have created a “XY on Mastodon” page on any academic or scientific topic, please add it to the list [here](https://github.com/nathanlesage/academics-on-mastodon) or just contact us. If it’s on any other topic, let us know, too, so we can share it.
 
+If you want to get in touch with other people maintaining an “Academics on Mastodon”-List, you can follow the group AoM_lists@a.gup.pe or enter the public Matrix space #AcademicsOnMastodon:riotchat.de.
+
 ## Documentation
 
 ### csv file
