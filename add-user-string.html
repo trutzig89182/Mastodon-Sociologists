@@ -6,9 +6,18 @@
     <!-- loads styling and scripts -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="assets/js/add-user-string.js"></script>
+
   </head>
 
   <body>
+
+
+    <!-- enter the email adress you want to get your messages at here -->
+    <div hidden="true" id="mail_contact">david.adler@uni-oldenburg.de</div>
+    <!-- enter the email adress you want to get your messages at here -->
+    <div hidden="true" id="mail_subject">SoM: include me!</div>
+
+
     <div id="app">
     <!-- link to blog post that lists different following lists based on https://github.com/trutzig89182/Mastodon-Sociologists -->
     <a
@@ -45,17 +54,26 @@
       <label for="keyword3"> Keyword 3</label><br><br>
       <input type="text" id="language" name="language" placeholder="fr zh">
       <label for="language"> Main language(s) (use <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639 language code</a>)</label><br><br>
+      <h5>Verification</h5>
+      <p>
+        To make sure that you own the account added, please make a post including #SoM and a link to the post below.
+        If you include @perspectivbrocken@social.techncs.de in your post it can be private/mentioned people only.
+      </p>
+      <input type="url" id="verification_link" name="confirmaton_link" placeholder="Link to post">
+      <label for="verification_link"></label><br><br>
 
       <!-- creates button  -->
+      <button type="button" id="create_and_send">Create and Send as email</button>
       <button type="button" id="create_new_user_entry">Create new user entry</button>
     </form >
 
     <h4>Your entry:</h4>
-    <p id="created_user_entry">
-    </p>
+    <div class=box>
+      <p id="created_user_entry"></p>
+    </div>
 
     <p>
-       Send this line to me in a DM via Mastodon (<a href="https://social.tchncs.de/@perspektivbrocken" target="blank">@perspektivbrocken@social.tchns.de</a>) or <a href="mailto:david.adler@uni-oldenburg.de" target="_blank">via email</a>.
+       Send this line to me <a href="mailto:david.adler@uni-oldenburg.de?subject=SoM%3A%20include%20me%21" target="_blank">via email</a> (preferred) or via Mastodon (<a href="https://social.tchncs.de/@perspektivbrocken" target="blank">@perspektivbrocken@social.tchns.de</a>).
     </p>
 
       <!-- ruler that seperates the footer -->

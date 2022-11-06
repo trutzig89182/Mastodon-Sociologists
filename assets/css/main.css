@@ -82,3 +82,9 @@ button#select-none-users {
 button#generate-csv {
   margin-top: 10px;
 }
+
+div.box {
+  border: 3px dotted grey;
+  min-height: 60px;
+  padding: 10px;
+}
