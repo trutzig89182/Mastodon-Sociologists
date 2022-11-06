@@ -107,7 +107,7 @@ function createFullCSV () {
 /**
  * Builds a form from the CSV data for people to select accounts
  *
- * @param   {Array<{ account: string, link: string, name: string }>}  users  The parsed CSV data
+ * @param   {Array<{ account: string, name: string, link: string, keywords: string }>}  users  The parsed CSV data
  */
 function buildUserSelectionForm (users) {
   const container = userListWrapper()
@@ -122,7 +122,8 @@ function buildUserSelectionForm (users) {
     // <div class="input-list-item">
     //   <input name="selected_users" value="user.account" id="user.account">
     //   <label for="user.account">Account (name)</label>
-    //   <a href="link">Link (without https)</a>
+    //   <a href="link">"Profile"</a>
+    //  <div>Keywords:
     // </div>
 
     const wrapper = document.createElement('div')
@@ -142,13 +143,40 @@ function buildUserSelectionForm (users) {
 
     wrapper.appendChild(label)
 
+    const seperator = document.createElement('span')
+    seperator.textContent = " – "
+    wrapper.appendChild(seperator)
+
+    // Link as cickable word/icon
     if ('link' in user && user.link.trim() !== '') {
       const profileLink = document.createElement('a')
-      profileLink.textContent = user.link.replace('https://', '')
+      profileLink.textContent = "Profile"
       profileLink.setAttribute('href', user.link)
-      profileLink.setAttribute('target', '_blank')
+      profileLink.setAttribute('target', 'blank')
       wrapper.appendChild(profileLink)
+
+    if ('keywords' in user && 'keywords'.trim() !== '') {
+      wrapper.appendChild(seperator)
+
+      const keywords = document.createElement('span')
+      const keywordstring = "Keywords: " + user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
+      keywords.textContent = keywordstring
+      wrapper.appendChild(keywords)
+
+
     }
+
+  }
+
+
+    // // Trimed Link in checkbox-list
+    // if ('link' in user && user.link.trim() !== '') {
+    //   const profileLink = document.createElement('a')
+    //   profileLink.textContent = user.link.replace('https://', '')
+    //   profileLink.setAttribute('href', user.link)
+    //   profileLink.setAttribute('target', '_blank')
+    //   wrapper.appendChild(profileLink)
+    // }
 
     container.appendChild(wrapper)
   }
@@ -191,7 +219,7 @@ function generateCSV () {
 /**
  * Displays a simple copy-and-paste list from the CSV data
  *
- * @param   {Array<{ account: string, link: string, name: string }>}  users  The parsed CSV data
+ * @param   {Array<{ account: string, name: string, link: string, keywords: string, language: string}>}  users  The parsed CSV data
  */
 function buildSimpleList (users) {
   const container = userListWrapper() // ul element
