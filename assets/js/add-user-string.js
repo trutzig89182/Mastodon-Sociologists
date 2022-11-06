@@ -21,17 +21,17 @@ function createNewUserEntry() {
   // make keyword string out of keyword inputs, keywords bound together by "_" seperated by " "
   var keywordstring = ""
   if (document.getElementById("keyword1").value !== null) {
-    const keyword1 = document.getElementById("keyword1").value.replace(" ", "_")
+    const keyword1 = document.getElementById("keyword1").value.replaceAll(" ", "_")
     keywordstring = keywordstring.concat(keyword1 + " ")
     console.log(keywordstring)
   }
   if (document.getElementById("keyword2").value !== null) {
-    const keyword2 = document.getElementById("keyword2").value.replace(" ", "_")
+    const keyword2 = document.getElementById("keyword2").value.replaceAll(" ", "_")
     keywordstring = keywordstring.concat(keyword2 + " ")
     console.log(keywordstring)
   }
   if (document.getElementById("keyword3").value !== null) {
-    const keyword3 = document.getElementById("keyword3").value.replace(" ", "_")
+    const keyword3 = document.getElementById("keyword3").value.replaceAll(" ", "_")
     keywordstring = keywordstring.concat(keyword3)
     console.log(keywordstring)
   }
