@@ -1,4 +1,7 @@
 account,name,link,keywords,language
+@WesleyDean@mastodon.online,Wesley Dean,https://mastodon.online/@WesleyDean,Food_access Food_security Taste,en
+@katemasonphd@mastodon.social,Kate Mason,https://mastodon.social/@katemasonphd,Gender Health Stratification,en
+@zpneal@mastodon.social,zpneal,https://mastodon.social/@zpneal,networks rstats urban,en
 @bartram@mastodon.social,David Bartram,https://mastodon.social/@bartram,migration happiness quants,
 @d4meyer@sciences.social,Daniel Meyer,https://sciences.social/@d4meyer
 @meghanetinsley@mastodon.green,Meghan Tinsley,https://mastodon.green/@meghanetinsley,Race ethnicity Memory_Nationalism,en
@@ -7,15 +10,15 @@ account,name,link,keywords,language
 @jeffsheng@mstdn.social,Jeff Sheng,https://mstdn.social/@jeffsheng
 @analyticus@mastodon.social,Cees Grootes,https://mastodon.social/@analyticus
 @bencaudron@mastodon.social,Ben Caudron,https://mastodon.social/@bencaudron,technology discourse depolitization,nl en
-@hermwerf@mastodon.social,Herman van de Werfhorst,https://mastodon.social/@hermwerf
+@hermwerf@mastodon.social,Herman van de Werfhorst,https://mastodon.social/@hermwerf,Stratification education statistics,en nl
 @kimdelaat@c.im,Kim de Laat,https://c.im/@kimdelaat
 @rlynnphd@sciences.social,Randy Lynn,https://sciences.social/@rlynnphd
-@landrous@m.cmx.im,十亿光年沉默狗,https://m.cmx.im/@landrous,cultural_sociology economic_sociology intimacy,en
+@landrous@m.cmx.im,十亿光年沉默狗,https://m.cmx.im/@landrous,cultural_sociology economic_sociology intimacy,en zh
 @lclandivar@sciences.social,Christin Landivar,https://sciences.social/@lclandivar
 @rachelfish03@mastodon.sdf.org,Rachel Fish,https://mastodon.sdf.org/@rachelfish03,education disability race,en
 @carlnordlund@mastodon.social,Carl,https://mastodon.social/@carlnordlund,Inter-ethnic_relations Network_analysis Economic_globalization,en
 @jessicacalarco@mastodon.social,Jess Calarco,https://mastodon.social/@jessicacalarco,education family qualitative_methods,en
-@GuzmanCesar9@mastodon.online,César Guzmán-Concha,https://mastodon.online/@GuzmanCesar9
+@GuzmanCesar9@mastodon.online,César Guzmán-Concha,https://mastodon.online/@GuzmanCesar9,social_movements social_justice Contentious_Politics,en
 @anny@todon.eu,Anny N.,https://todon.eu/@anny
 @jimiadams@sciences.social,jimi adams,https://sciences.social/@jimiadams,Social_Network_Analysis Population_Health diffusion,en
 @selbstreferent@chaos.social,Daniel Guagnin,https://chaos.social/@selbstreferent,de
@@ -150,9 +153,10 @@ account,name,link,keywords,language
 @naomilawsonjacobs@fediscience.org,Naomi Lawson Jacobs,https://fediscience.org/@naomilawsonjacobs
 @Oliver_Wieczorek@mastodon.social,Oliver Wieczorek,https://mastodon.social/@Oliver_Wieczorek
 @onlytina@todon.eu,onlytina,https://todon.eu/@onlytina
+@dwaldecker@fediscience.org,David Waldecker,https://fediscience.org/@dwaldecker
 @pardoguerra@mastodon.social,JP Pardo-Guerra,https://mastodon.social/@pardoguerra
 @pengzell@mastodon.social,Per Engzell,https://mastodon.social/@pengzell
-@perspektivbrocken@social.tchncs.de,David Adler,https://social.tchncs.de/@perspektivbrocken
+@perspektivbrocken@social.tchncs.de,David Adler,https://social.tchncs.de/@perspektivbrocken,architecture capitalism qualitative_methods,de en
 @PeterKahlert@digitalcourage.social,Peter Kahlert,https://digitalcourage.social/@PeterKahlert
 @philipncohen@mastodon.social,Philip N Cohen,https://mastodon.social/@philipncohen
 @ramyologist@mastodon.social,Ramyologist,https://mastodon.social/@ramyologist
