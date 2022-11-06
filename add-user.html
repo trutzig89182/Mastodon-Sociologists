@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- Theese informations will be shown in the tab preview and in social media preview -->
-    <title>SoM: create new user</title>
+    <title>SoM: add user</title>
     <!-- loads styling and scripts -->
     <link rel="stylesheet" href="assets/css/main.css" />
     <script src="assets/js/add-user-string.js"></script>
@@ -39,32 +39,34 @@
     <form method="post" action="#">
       <!-- creates input fields and labels -->
       <h5>Necessary information</h5>
+      <label for="account"> Account</label><br>
       <input type="text" id="account" name="acount" placeholder="@user@instance">
       <label for="account"> Account</label><br><br>
-      <input type="text" id="name" name="name" placeholder="Max Musterman, or @user">
-      <label for="name"> Name (use username if you don’t want your full name included)</label><br><br>
       <input type="url" id="url" name="url" placeholder="https://instance/@user">
-      <label for="url"> url:</label><br><br>
+      <label for="url">Your profile url</label>
       <h5>Optional</h5>
-      <input type="text" id="keyword1" name="keyword1" placeholder="Your_keyword">
+      <input type="text" id="name" name="name" placeholder="Max Musterman, or @user">
+      <label for="name"> Your Name</label><br><br>
+      <input type="text" id="keyword1" name="keyword1" placeholder="Your keyword">
       <label for="keyword1">Keyword 1</label><br><br>
-      <input type="text" id="keyword2" name="keyword2" placeholder="Your_keyword">
+      <input type="text" id="keyword2" name="keyword2" placeholder="Your keyword">
       <label for="keyword2"> Keyword 2</label><br><br>
-      <input type="text" id="keyword3" name="keyword3" placeholder="Your_keyword">
+      <input type="text" id="keyword3" name="keyword3" placeholder="Your keyword">
       <label for="keyword3"> Keyword 3</label><br><br>
       <input type="text" id="language" name="language" placeholder="fr zh">
       <label for="language"> Main language(s) (use <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639 language code</a>)</label><br><br>
       <h5>Verification</h5>
       <p>
-        To make sure that you own the account added, please make a post including #SoM and a link to the post below.
-        If you include @perspectivbrocken@social.techncs.de in your post it can be private/mentioned people only.
+        To make sure that you own the added account, please make a
+        post including the word “#SoM”. Then enter the link to your post here:
       </p>
       <input type="url" id="verification_link" name="confirmaton_link" placeholder="Link to post">
       <label for="verification_link"></label><br><br>
 
       <!-- creates button  -->
-      <button type="button" id="create_and_send">Create and Send as email</button>
-      <button type="button" id="create_new_user_entry">Create new user entry</button>
+      <button type="button" id="create_and_send">Send in Email</button>
+      <span>or/<span>
+      <button type="button" id="create_new_user_entry">Print below</button>
     </form >
 
     <h4>Your entry:</h4>
@@ -73,7 +75,7 @@
     </div>
 
     <p>
-       Send this line to me <a href="mailto:david.adler@uni-oldenburg.de?subject=SoM%3A%20include%20me%21" target="_blank">via email</a> (preferred) or via Mastodon (<a href="https://social.tchncs.de/@perspektivbrocken" target="blank">@perspektivbrocken@social.tchns.de</a>).
+       Send this line to me <a href="mailto:david.adler@uni-oldenburg.de?subject=SoM%3A%20include%20me%21" target="_blank">via email</a> (preferred) or via DM on Mastodon (<a href="https://social.tchncs.de/@perspektivbrocken" target="blank">@perspektivbrocken@social.tchns.de</a>).
     </p>
 
       <!-- ruler that seperates the footer -->

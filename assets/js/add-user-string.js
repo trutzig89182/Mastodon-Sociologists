@@ -46,10 +46,10 @@ function createNewUserEntry() {
   } else {
     newUser.account = ""
   }
-  if (document.getElementById("name").value !== null) {
+  if (document.getElementById("name").value !== null && document.getElementById("name").value.trim() !== "") {
     newUser.name = document.getElementById("name").value
   } else {
-    newUser.name = ""
+    newUser.name = "–"
   }
   if (document.getElementById("url").value !== null) {
     newUser.url = document.getElementById("url").value
