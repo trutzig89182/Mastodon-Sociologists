@@ -16,6 +16,8 @@ If you have created a “XY on Mastodon” page on any academic or scientific to
 
 If you want to get in touch with other people maintaining an “Academics on Mastodon”-List, you can follow the group AoM_lists@a.gup.pe or enter the public Matrix space #AcademicsOnMastodon:riotchat.de.
 
+> Please be aware that this is by no means a professional project. Things may fall appart. It’s not very complex, though, and if you store your CSV file safely, nothing bad can happen.
+
 ## Documentation
 
 ### csv file
