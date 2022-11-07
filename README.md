@@ -20,7 +20,7 @@ If you want to get in touch with other people maintaining an “Academics on Mas
 
 ### csv file
 the csv file is stored in `/resources/`.
-Any file with the colums `account,name,url` will do.
+Any file with the colums `account,name,url` will do. We are planing to add keywords and main language(s) and offer a way to filter the list. So, looking forward you could also include a colum `keywords`and colum `language`.
 
 ### tootformat.html
 The page `tootformat.html` renders all accounts from the csv file as “account (name)”. This offers you a more readable format, which you can copy to your posts in Mastodon. It can be reached if you add `/tootformat.html` to your webpage’s url.
