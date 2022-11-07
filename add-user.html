@@ -12,9 +12,9 @@
   <body>
 
 
-    <!-- enter the email adress you want to get your messages at here -->
+    <!-- enter the email adress you want to get your messages at from the "Send in Email" button here -->
     <div hidden="true" id="mail_contact">david.adler@uni-oldenburg.de</div>
-    <!-- enter the email adress you want to get your messages at here -->
+    <!-- enter the subject you want to generate for your e-mail. This may help you filter the emails in your inbox  -->
     <div hidden="true" id="mail_subject">SoM: include me!</div>
 
 
@@ -39,7 +39,6 @@
     <form method="post" action="#">
       <!-- creates input fields and labels -->
       <h5>Necessary information</h5>
-      <label for="account"> Account</label><br>
       <input type="text" id="account" name="acount" placeholder="@user@instance">
       <label for="account"> Account</label><br><br>
       <input type="url" id="url" name="url" placeholder="https://instance/@user">
@@ -57,11 +56,18 @@
       <label for="language"> Main language(s) (use <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes" target="_blank">ISO 639 language code</a>)</label><br><br>
       <h5>Verification</h5>
       <p>
-        To make sure that you own the added account, please make a
+        To make sure that you own the added account, please make a (public or non-listed)
         post including the word “#SoM”. Then enter the link to your post here:
       </p>
       <input type="url" id="verification_link" name="confirmaton_link" placeholder="Link to post">
-      <label for="verification_link"></label><br><br>
+      <label for="verification_link"></label><br>
+
+      <!-- radio button to check if new account or update -->
+      <p>
+        <input type="radio" id="update" name="update"/>
+        <label for "update">I already am in the list but want to update my data.<label>
+      </p>
+      <br>
 
       <!-- creates button  -->
       <button type="button" id="create_and_send">Send in Email</button>

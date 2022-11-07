@@ -21,17 +21,17 @@ function createNewUserEntry() {
   // make keyword string out of keyword inputs, keywords bound together by "_" seperated by " "
   var keywordstring = ""
   if (document.getElementById("keyword1").value !== null) {
-    const keyword1 = document.getElementById("keyword1").value.replaceAll(" ", "_")
+    const keyword1 = document.getElementById("keyword1").value.trim().replaceAll(" ", "_")
     keywordstring = keywordstring.concat(keyword1 + " ")
     console.log(keywordstring)
   }
   if (document.getElementById("keyword2").value !== null) {
-    const keyword2 = document.getElementById("keyword2").value.replaceAll(" ", "_")
+    const keyword2 = document.getElementById("keyword2").value.trim().replaceAll(" ", "_")
     keywordstring = keywordstring.concat(keyword2 + " ")
     console.log(keywordstring)
   }
   if (document.getElementById("keyword3").value !== null) {
-    const keyword3 = document.getElementById("keyword3").value.replaceAll(" ", "_")
+    const keyword3 = document.getElementById("keyword3").value.trim().replaceAll(" ", "_")
     keywordstring = keywordstring.concat(keyword3)
     console.log(keywordstring)
   }
@@ -66,8 +66,11 @@ function createNewUserEntry() {
   } else {
     newUser.verification = ""
   }
+  if (document.getElementById("update").value !== null) {
+    newUser.update = document.getElementById("update").value
+  }
 
-  const user_csv_string = newUser.account + "," + newUser.name + "," + newUser.url + "," + newUser.keywords + "," + newUser.language
+  //const user_csv_string = newUser.account + "," + newUser.name + "," + newUser.url + "," + newUser.keywords + "," + newUser.language
 
   return newUser
 }
@@ -89,15 +92,19 @@ function printUserEntry() {
 // function for opening email window and inputting csv string
 function sendUserEntry() {
   const newUser = createNewUserEntry()
+  if (newUser.update.checked) {
+    const is_update = "UPDATE DATA"
+  } else {
+    const is_update = "NEW USER"
+  }
   const user_csv_string = newUser.account + "," + newUser.name + "," + newUser.url + "," + newUser.keywords + "," + newUser.language
   const email_adress = document.getElementById("mail_contact").innerText
   console.log(email_adress)
   const email_subject = encodeURIComponent(document.getElementById("mail_subject").innerText)
+  const email_body = encodeURIComponent("(Add your message here)\n\n\n--–" + is_update + "–––\nUser info: " + user_csv_string + "\nVerification link: " + newUser.verification)
   const sendurl = "mailto:" + email_adress
     + "?subject=" + email_subject
-    + "&body=" + encodeURIComponent("(Add your message here)") + "%0A%0A%0A---%0A" + encodeURIComponent("User info: ")
-    + encodeURIComponent(user_csv_string) + "%0A"
-    + encodeURIComponent("Verification link: ") + newUser.verification
+    + "&body=" + email-body
   window.location = sendurl
 
 }
