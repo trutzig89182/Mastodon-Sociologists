@@ -12,6 +12,7 @@ function generateCSVButton () { return document.getElementById('generate-csv') }
 function allCheckboxes () { return document.querySelectorAll('input[name="selected_users"]') }
 function userListWrapper () { return document.getElementById('user-list') }
 function formElement () { return document.getElementById('main-form') }
+function filterByKeyword () { return document.getElementsByName('clickable_keyword')}
 
 // ON LOAD ENTRY POINT
 document.addEventListener('DOMContentLoaded', function () {
@@ -38,6 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
     generateButton.addEventListener('click', generateCSV)
   }
 
+  const keywordA = filterByKeyword ()
+  if (keywordA !== null) {
+      keywordA.addeventlistener('click', function() {
+        filterByKeyword(keywordA.value)
+      }
+    )
+  }
+
   // Now, determine which list we need to build. There are two files available,
   // one that simply spits out a list of account names, and another one that
   // builds a form for people to select users. We can determine which of the
@@ -46,7 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
   .then(function (data) {
     if (formElement() !== null) {
       // We're on the form page
-      buildUserSelectionForm(data)
+      const no_selector = ""
+      buildUserSelectionForm(data, no_selector)
     } else {
       // We're on the tootformat page
       buildSimpleList(data)
@@ -168,6 +178,27 @@ function buildUserSelectionForm (users) {
      wrapper.appendChild(keywords)
    }
 
+
+   // if ('keywords' in user && 'keywords'.trim() !== '') {
+   //   wrapper.appendChild(breakseperator)
+   //
+   //   const keywords = document.createElement('span')
+   //   //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
+   //   const keywordArray = user.keywords.split(" ")
+   //   // counter to change seperators depending on position
+   //   for (i in keywordArray) {
+   //     if (i !== 0) {
+   //       wrapper.appendChild(commaseperator)
+   //     }
+   //     const keyword_item = document.createElement('a')
+   //     keyword_item.textContent = keywordArray[i].replaceAll("_", " ")
+   //     keyword_item.setAttribute('value', keywordArray[i])
+   //     keyword_item.setAttribute('name', 'clickable_keyword')
+   //     keyword_item.setAttribute('href', '')
+   //     wrapper.appendChild(keyword_item)
+   //   }
+   // }
+
    container.appendChild(wrapper)
   }
 }
@@ -219,4 +250,10 @@ function buildSimpleList (users) {
     li.textContent = `${user.account} (${user.name})`
     container.appendChild(li)
   }
+}
+
+
+function filterByKeyword (selected_keyword) {
+  const this_keyword = selected_keyword.toLowerCase()
+  buildUserSelectionForm(data, this_keyword)
 }
