@@ -19,11 +19,14 @@ If you want to get in touch with other people maintaining an “Academics on Mas
 ## Documentation
 
 ### csv file
-the csv file is stored in `/resources/`.
+The csv file is stored in `/resources/`.
 Any file with the colums `account,name,url` will do. We are planing to add keywords and main language(s) and offer a way to filter the list. So, looking forward you could also include a colum `keywords`and colum `language`.
 
 ### tootformat.html
 The page `tootformat.html` renders all accounts from the csv file as “account (name)”. This offers you a more readable format, which you can copy to your posts in Mastodon. It can be reached if you add `/tootformat.html` to your webpage’s url.
+
+### Add users
+This is still experimental. Will add a page that let’s users generate their own entry and send it via email to make adding new users simpler and more reliable. It will also include a simple way of verifying that the person adding the account is it’s owner. I am working on it here: https://github.com/trutzig89182/AoM-add-user and want to include it later.
 
 ### metatags & preview image
 Metatags help you to change how the webpage is previewed in social media. You can find them in the `<head>` of `index.html`. Adapt them to your pages name etc.
