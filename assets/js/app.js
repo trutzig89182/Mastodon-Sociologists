@@ -107,52 +107,71 @@ function createFullCSV () {
 /**
  * Builds a form from the CSV data for people to select accounts
  *
- * @param   {Array<{ account: string, link: string, name: string }>}  users  The parsed CSV data
+ * @param   {Array<{ account: string, name: string, link: string, keywords: string }>}  users  The parsed CSV data
  */
 function buildUserSelectionForm (users) {
-  const container = userListWrapper()
+ const container = userListWrapper()
 
-  if (container === null) {
-    console.error('Could not build user selection form: Cannot find wrapper.')
-    return
-  }
+ if (container === null) {
+   console.error('Could not build user selection form: Cannot find wrapper.')
+   return
+ }
 
-  for (const user of users) {
-    // Structure:
-    // <div class="input-list-item">
-    //   <input name="selected_users" value="user.account" id="user.account">
-    //   <label for="user.account">Account (name)</label>
-    //   <a href="link">Link (without https)</a>
-    // </div>
+ for (const user of users) {
+   // Structure:
+   // <div class="input-list-item">
+   //   <input name="selected_users" value="user.account" id="user.account">
+   //   <label for="user.account">Account (name)</label>
+   //   <a href="link">"Profile"</a>
+   //  <div>Keywords:
+   // </div>
 
-    const wrapper = document.createElement('div')
-    wrapper.classList.add('input-list-item')
+   const wrapper = document.createElement('div')
+   wrapper.classList.add('input-list-item')
 
-    const input = document.createElement('input')
-    input.value = user.account
-    input.type = 'checkbox'
-    input.name = 'selected_users'
-    input.setAttribute('id', user.account)
+   const input = document.createElement('input')
+   input.value = user.account
+   input.type = 'checkbox'
+   input.name = 'selected_users'
+   input.setAttribute('id', user.account)
 
-    wrapper.appendChild(input)
+   wrapper.appendChild(input)
 
-    const label = document.createElement('label')
-    label.setAttribute('for', user.account)
-    label.textContent = `${user.account} (${user.name}) `
+   const label = document.createElement('label')
+   label.setAttribute('for', user.account)
+   label.textContent = user.account
 
-    wrapper.appendChild(label)
+   wrapper.appendChild(label)
 
-    if ('link' in user && user.link.trim() !== '') {
-      const profileLink = document.createElement('a')
-      profileLink.textContent = user.link.replace('https://', '')
-      profileLink.setAttribute('href', user.link)
-      profileLink.setAttribute('target', '_blank')
-      wrapper.appendChild(profileLink)
-    }
+   // Name as clickable link to profile
+   const bracketOpen = document.createTextNode(" (")
+   const bracketClose = document.createTextNode(") ")
+   wrapper.appendChild(bracketOpen)
+   if ('link' in user && user.link.trim() !== '') {
+     const nameAsLink = document.createElement('a')
+     nameAsLink.textContent = user.name
+     nameAsLink.setAttribute('href', user.link)
+     nameAsLink.setAttribute('target', 'blank')
+     wrapper.appendChild(nameAsLink)
+   } else {
+     const nameWithoutLink = document.createTextNode(user.name)
+     wrapper.appendChild(nameWithoutLink)
+   }
+   wrapper.appendChild(bracketClose)
 
-    container.appendChild(wrapper)
+   const seperator = document.createTextNode(" – ")
+
+   if ('keywords' in user && 'keywords'.trim() !== '') {
+     wrapper.appendChild(seperator)
+
+     const keywords = document.createTextNode("Keywords: " + user.keywords.replaceAll(" ", ", ").replaceAll("_", " "))
+     wrapper.appendChild(keywords)
+   }
+
+   container.appendChild(wrapper)
   }
 }
+
 
 /**
  * This function actually generates the CSV file with the selected users.
@@ -191,7 +210,7 @@ function generateCSV () {
 /**
  * Displays a simple copy-and-paste list from the CSV data
  *
- * @param   {Array<{ account: string, link: string, name: string }>}  users  The parsed CSV data
+ * @param   {Array<{ account: string, name: string, link: string, keywords: string, language: string}>}  users  The parsed CSV data
  */
 function buildSimpleList (users) {
   const container = userListWrapper() // ul element
