@@ -1,4 +1,10 @@
 account,name,link,keywords,language
+@langspielplatte@toot.commuity,Daniel Felscher,https://toot.community/@langspielplatte/,Sociology Practice_Theory Sound_Studies,en de
+@lucymichael@mastodon.ie,Lucy Michael,https://mastodon.ie/lucymichael,Equality Racism Justice,en
+@Katestew@mastodon.online,Kate Stewart,https://mastodon.online/@Katestew,Vegan_sociology Qualitative_methods,en
+@laurafo@sciences.social,Laura Fokkena,https://sciences.social/@laurafo,International_Education Inequality Social_and_Political_Change,en
+Saragoldrickrab@mas.to,Sara Goldrick-Rab,https://mas.to/@saragoldrickrab,Real_College Higher_Education Poverty,en
+@peter_mcmahan@mas.to ,Peter McMahan,https://mas.to/@peter_mcmahan,networks culture science,en
 @renaelsm@mastodon.online,Renae Loh,https://mastodon.online/@renaelsm,Socio-digital_inequalities ICT
 @allanmccoy@sciences.social,Allan Mccoy,https://sciences.social/@allanmccoy,medical_sociology public_health infectious_disease_control,en
 @bernardforgues@mastodon.social,Bernard Forgues,https://mastodon.social/@bernardforgues,organization institutions social_evaluation,en fr
@@ -11,7 +17,7 @@ account,name,link,keywords,language
 @elyas@sciences.social,Elyas Bakhtiari,https://sciences.social/@elyas,medical_sociology demography health,en
 @jeffrey_stokes@sciences.social,Jeff Stokes,https://sciences.social/@jeffrey_stokes,Aging
 @SocFocus@FediScience.org,Sociological Focus,https://fediscience.org/@socfocus
-@raphaelm,Raphaël Martin-Melizi,https://journa.host/@raphaelm,,fr
+@raphaelm@social.sciences.re,Raphaël Martin-Melizi,https://social.sciences.re/@raphaelm,Gender Sexuality Digital_studies,fr
 @theobourgeron@mastodon.scot,Théo Bourgeron,https://mastodon.scot/@theobourgeron,economic_sociology sociology_of_health,en fr
 @jelena3121@mastodon.social,Jelena Brankovic,https://mastodon.social/@jelena3121,Organizations Higher_education,en
 brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchurchill,Youth Work_and_employment Gender,En
@@ -20,7 +26,7 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @pdbrooker@mastodon.online,Phillip Brooker,https://mastodon.online/@pdbrooker,Ethnomethodology STS Digital_Methods,en
 @antoinegaboriau@todon.eu,Antoine Gaboriau,https://todon.eu/@antoinegaboriau,,fr en es
 @haphazardsoc@sciences.social,Neal Caren,https://sciences.social/,,en
-@sara_geven@c.im,Sara Geven,https://c.im/web/@sara_geven
+@sara_geven@c.im,Sara Geven,https://c.im/@sara_geven
 @mobarak@mstdn.social,mobarak hossain,https://mstdn.social/@mobarak
 @markgatto@mstdn.social,–,https://mstdn.social/@markgatto,Parents_at_work Masculinities Dystopian_fiction
 @eyalbhaim@tooot.im,Eyal Bar-Haim,https://tooot.im/eyalbhaim,Educational_expansion Stratification Inequality,he
@@ -39,11 +45,11 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @loebbi@fediscience.org,Peter Löbbecke,https://www.researchgate.net/profile/Peter_Loebbecke,internet_communication internet_and_KRITIS_safety Pedagogics,de en
 @JPinaSanchez@sciences.social,Jose Pina-Sánchez,https://sciences.social/@JPinaSanchez,Sentencing Disparities Measurement,en
 @amandaywise@aus.social,Amanda Wise,https://aus.social/@amandaywise,Social_Inequality,en
-@sautier_marie@sciences.re,Marie Sautier,https://social.sciences.re/web/@sautier_marie,Recruitment_practices Internationalisation_of_academia Academic_mobility,fr en
+@sautier_marie@sciences.re,Marie Sautier,https://social.sciences.re/@sautier_marie,Recruitment_practices Internationalisation_of_academia Academic_mobility,fr en
 @SarahQuinn@mastodon.social,Sarah Quinn,https://mastodon.social/@SarahQuinn
 @gerardomarti@sciences.social,Gerardo Martí,https://sciences.social/@gerardomarti,Race Religion Social_Change,en es
 @alex@dair-community.social,Alex Hanna,https://dair-community.social/alex,AI technology social_movements,en us
-@ayu@sciences.social,Ang Yu,https://sciences.social/web/@ayu
+@ayu@sciences.social,Ang Yu,https://sciences.social/@ayu
 @WesleyDean@mastodon.online,Wesley Dean,https://mastodon.online/@WesleyDean,Food_access Food_security Taste,en
 @katemasonphd@mastodon.social,Kate Mason,https://mastodon.social/@katemasonphd,Gender Health Stratification,en
 @zpneal@mastodon.social,zpneal,https://mastodon.social/@zpneal,networks rstats urban,en
@@ -68,7 +74,7 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @jimiadams@sciences.social,jimi adams,https://sciences.social/@jimiadams,Social_Network_Analysis Population_Health diffusion,en
 @selbstreferent@chaos.social,Daniel Guagnin,https://chaos.social/@selbstreferent,,de
 @guipeti@sciences.social,Guillaume Petit,https://sciences.social/@guipeti,democracy political_participation institutions,fr en
-@dass@norden.social,David S,https://social.tchncs.de/web/@dass@norden.social,Capitalism Transformation Digital_Sociology,de
+@dass@norden.social,David S,https://social.tchncs.de/@dass@norden.social,Capitalism Transformation Digital_Sociology,de
 @Evan_Stewart@sciences.social,Evan Stewart,https://sciences.social/@Evan_Stewart,Political_Sociology Religion Quantitative_Methods,en
 @matzbot@social.tchncs.de,Matthias Bottel,https://social.tchncs.de/@matzbot,Technology Innovation Software,de
 @olgasara2003@nerdculture.de,Olga Sabido Ramos,https://nerdculture.de/@olgasara2003,Theory Emotions Senses
@@ -101,8 +107,8 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @erola@fediscience.org,Jani Erola,https://fediscience.org/@erola
 @KAFuller@mastodon.online,Kat Fuller,https://mastodon.online/@KAFuller
 @austinkocher@mastodon.social,Austin Kocher,https://mastodon.social/@austinkocher
-@yanakucheva@mastodon.online,Yana Kucheva,https://social.tchncs.de/web/@yanakucheva@mastodon.online
-@LarsGertenbach@social.tchncs.de,Lars Gertenbach,https://social.tchncs.de/web/@LarsGertenbach
+@yanakucheva@mastodon.online,Yana Kucheva,https://social.tchncs.de/@yanakucheva@mastodon.online
+@LarsGertenbach@social.tchncs.de,Lars Gertenbach,https://social.tchncs.de/@LarsGertenbach
 @kolame@social.tchncs.de,Christoph Peters,https://social.tchncs.de/@kolame
 @betthaeuser@sciences.social,Bastian Betthaeuser,https://sciences.social/@betthaeuser
 @leni@todon.eu,Marlen van den Ecker,https://todon.eu/@leni
@@ -181,7 +187,7 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @LarsAlberth@mastodon.social,Lars Alberth,https://mastodon.social/@LarsAlberth
 @LordElend@fediscience.org,Arne Maibaum,https://fediscience.org/@LordElend
 @matsommer@mastodon.social ,Matthias Sommer,https://mastodon.social/@matsommer
-@naomilawsonjacobs@fediscience.org,Naomi Lawson Jacobs,https://fediscience.org/@naomilawsonjacobs
+@naomilawsonjacobs@scholar.social,Naomi Lawson Jacobs,https://scholar.social/@naomilawsonjacobs,Disability_Studies Sociology_of_Religion Participatory_Research
 @onlytina@todon.eu,onlytina,https://todon.eu/@onlytina
 @dwaldecker@fediscience.org,David Waldecker,https://fediscience.org/@dwaldecker
 @pardoguerra@mastodon.social,JP Pardo-Guerra,https://mastodon.social/@pardoguerra
