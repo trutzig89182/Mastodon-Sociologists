@@ -1,14 +1,6 @@
 account,name,link,keywords,language
-@theobourgeron@mastodon.scot,Théo Bourgeron,https://mastodon.scot/@theobourgeron,economic_sociology sociology_of_health,en fr
-@jelena3121@mastodon.social,Jelena Brankovic,https://mastodon.social/@jelena3121,Organizations Higher_education,en
-brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchurchill,Youth Work_and_employment Gender,En
-@omarlizardo@sciences.social,Omar Lizardo,https://sciences.social/@omarlizardo,Culture Networks Organization
-@kerstinsailer@sciences.social,Kerstin Sailer,https://sciences.social/@kerstinsailer,Sociology_of_architecture Social_Network_Analysis Organisational_Sociology,en de
-@pdbrooker@mastodon.online,Phillip Brooker,https://mastodon.online/@pdbrooker,Ethnomethodology STS Digital_Methods,en
-@antoinegaboriau@todon.eu,Antoine Gaboriau,https://todon.eu/@antoinegaboriau,,fr en es
-@haphazardsoc@sciences.social,Neal Caren,https://sciences.social/,,en
-@sara_geven@c.im,Sara Geven,https://c.im/web/@sara_geven
-@mobarak@mstdn.social,mobarak hossain,https://mstdn.social/@mobarak
+@sara_geven@c.im,Sara Geven,https://c.im/web/@sara_geven,,
+@mobarak@mstdn.social,mobarak hossain,https://mstdn.social/@mobarak,,
 @markgatto@mstdn.social,–,https://mstdn.social/@markgatto,Parents_at_work Masculinities Dystopian_fiction
 @eyalbhaim@tooot.im,Eyal Bar-Haim,https://tooot.im/eyalbhaim,Educational_expansion Stratification Inequality,he
 @Justin_Paulson@mastodon.social,Justin Paulson,https://mastodon.social/@Justin_Paulson,Political_Economy Settler_Colonialism Marxism,en es de
@@ -17,7 +9,7 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @AbelAussant@sciences.re,Abel Aussant,https://social.sciences.re/@AbelAussant,Education Culture Digital,fr
 @lukemartell@social.coop,Luke Martell,https://social.coop/@lukemartell,Alternatives Socialism Globalism,en
 @wcarsonbyrd@sciences.social,W. Carson Byrd,https://sciences.social/@wcarsonbyrd
-@markhenick@mstdn.social,Mark Henick,https://mstdn.social/@markhenick
+@markhenick,Mark Henick,https://mstdn.social/@markhenick
 @Justin_Paulson@mastodon.social,Justin Paulson,https://mastodon.social/@Justin_Paulson,Political_Economy Settler_Colonialism Marxism,en es de
 @dgsoziologie@mastodon.social,German Sociological Association (DGS),https://mastodon.social/@dgsoziologie,,de
 @AbelAussant@sciences.re,Abel Aussant,https://social.sciences.re/@AbelAussant,Education Culture Digital,fr
@@ -53,7 +45,7 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @GuzmanCesar9@mastodon.online,César Guzmán-Concha,https://mastodon.online/@GuzmanCesar9,social_movements social_justice Contentious_Politics,en
 @anny@todon.eu,Anny N.,https://todon.eu/@anny
 @jimiadams@sciences.social,jimi adams,https://sciences.social/@jimiadams,Social_Network_Analysis Population_Health diffusion,en
-@selbstreferent@chaos.social,Daniel Guagnin,https://chaos.social/@selbstreferent,,de
+@selbstreferent@chaos.social,Daniel Guagnin,https://chaos.social/@selbstreferent,de
 @guipeti@sciences.social,Guillaume Petit,https://sciences.social/@guipeti,democracy political_participation institutions,fr en
 @dass@norden.social,David S,https://social.tchncs.de/web/@dass@norden.social,Capitalism Transformation Digital_Sociology,de
 @Evan_Stewart@sciences.social,Evan Stewart,https://sciences.social/@Evan_Stewart,Political_Sociology Religion Quantitative_Methods,en
