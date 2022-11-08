@@ -14,7 +14,7 @@ For your convenience, we also have included a cleaned template for your index.ht
 
 You can publish your web app directly from the repository. For this, go to “Settings” and then choose “pages” in the left menue.
 
-If you have created a “XY on Mastodon” page on any academic or scientific topic, please add it to the list [here](https://github.com/nathanlesage/academics-on-mastodon) or just contact us. If it’s on any other topic, let us know, too, so we can share it.
+If you have created a “XY on Mastodon” page on any academic or scientific topic, please add it to the [Academics on Mastodon list of lists here](https://github.com/nathanlesage/academics-on-mastodon) or just contact us. If it’s on any other topic, let us know, too, so we can share it.
 
 If you want to get in touch with other people maintaining an “Academics on Mastodon”-List, you can follow the group AoM_lists@a.gup.pe or enter the public Matrix space #AcademicsOnMastodon:riotchat.de.
 
