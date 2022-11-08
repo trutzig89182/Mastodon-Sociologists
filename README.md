@@ -22,7 +22,7 @@ If you want to get in touch with other people maintaining an “Academics on Mas
 
 ### csv file
 The csv file is stored in `/resources/`.
-Any file with the colums `account,name,url` will do. We are planing to add keywords and main language(s) and offer a way to filter the list. So, looking forward you could also include a colum `keywords`and colum `language`.
+Any file with the colums `account,name,url` will do. We are planing to add keywords and main language(s) and offer a way to filter the list. So, looking forward you could also include a column `keywords`and column `language`. Keywords should be seperated by a space (" ") and multiword keywords connected by an underscore ("_"). Languages are seperated by a space (" "). Make sure that you don’t use any commas here, as that would break the CSV file’s structure. If you don’t have columns named “keywords”  and “language” nothing happens. If you have such columns and you use them differently, you may have to addapt the app.js file.
 
 ### tootformat.html
 The page `tootformat.html` renders all accounts from the csv file as “account (name)”. This offers you a more readable format, which you can copy to your posts in Mastodon. It can be reached if you add `/tootformat.html` to your webpage’s url.
