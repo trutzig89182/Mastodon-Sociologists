@@ -2,6 +2,8 @@
 
 This repository provides a  simple web app that helps to bulk follow Open Science account on the FOSS microblogging service Mastodon. In it you can create a csv-file that can be uploaded in any accounts mastodon seetings, in order to follow a list of accounts at once.
 
+![Title Image](https://github.com/rimamrahal/Mastodon-OpenScience/blob/68d4781f3a8557bd99025449943998070da7469b/resources/images/opensciencemastodon.png)
+
 ## Can I use this for my discipline/peer group?
 
 Yes, basically you just have to fork the repro and make some minor changes. **But we want to make you aware that this is by no means a professional project. Things may fall apart. It’s not very complex, and if you store your CSV file safely, nothing bad should happen. But our main focus is to make this work for the Sociologists on Mastodon page, not to offer generic tool. We still try make things easy for you, if you want to set something similar up.**
