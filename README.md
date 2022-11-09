@@ -1,6 +1,6 @@
-# Sociologists on Mastodon
+# Open Science on Mastodon – an Open Science version of the Sociologists on Mastodon Webapp
 
-This repository provides a most simple web app that helps to bulk follow sociologists on the FOSS microblogging service Mastodon. In it you can create a csv-file that can be uploaded in any accounts mastodon seetings, in order to follow a list of accounts at once.
+This repository provides a  simple web app that helps to bulk follow Open Science account on the FOSS microblogging service Mastodon. In it you can create a csv-file that can be uploaded in any accounts mastodon seetings, in order to follow a list of accounts at once.
 
 ## Can I use this for my discipline/peer group?
 
