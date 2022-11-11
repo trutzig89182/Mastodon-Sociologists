@@ -127,14 +127,23 @@ function buildUserSelectionForm (users) {
    return
  }
 
- for (const user of users) {
-   // Structure:
-   // <div class="input-list-item">
-   //   <input name="selected_users" value="user.account" id="user.account">
-   //   <label for="user.account">Account (name)</label>
-   //   <a href="link">"Profile"</a>
-   //  <div>Keywords:
-   // </div>
+  for (const user of users) {
+    // checks if the is a criterion for excluding/including users
+    if (selctor !== null &&  selector !== "") {
+      if (!user.keywords.toLowerCase().includes(selector.toLowerCase())) {
+      // stops this
+      continue
+      }
+    }
+
+
+    // Structure:
+    // <div class="input-list-item">
+    //   <input name="selected_users" value="user.account" id="user.account">
+    //   <label for="user.account">Account (name)</label>
+    //   <a href="link">"Profile"</a>
+    //  <div>Keywords:
+    // </div>
 
    const wrapper = document.createElement('div')
    wrapper.classList.add('input-list-item')
