@@ -12,7 +12,7 @@ function generateCSVButton () { return document.getElementById('generate-csv') }
 function allCheckboxes () { return document.querySelectorAll('input[name="selected_users"]') }
 function userListWrapper () { return document.getElementById('user-list') }
 function formElement () { return document.getElementById('main-form') }
-function filterByKeyword () { return document.getElementsByName('clickable_keyword')}
+function filterByKeyword () { return document.getElementsByClass('clickable_keyword')}
 
 // ON LOAD ENTRY POINT
 document.addEventListener('DOMContentLoaded', function () {
@@ -41,8 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const keywordA = filterByKeyword ()
   if (keywordA !== null) {
-      keywordA.addeventlistener('click', function() {
-        filterByKeyword(keywordA.value)
+      keywordA.addeventlistener('click', function() { // if keyword is clicked, this function is triggered
+        if (keywordA.value = true) // if the keyword has already been cklicked, value should be = true; in this case clicking a keyword with the same name should revert in all checkbox items been shown again (set style to display: normal)
+          keywordA.value = false //this chould probably be done in the undoFilter function
+          undoFilter()
+        } else {     // if the keyword has not yet been clicked trigger filterByKeyword function
+        keyowrdA.value = true //this should probably bee done in the filterByKeyword function
+        filterByKeyword(keywordA.name)
+
       }
     )
   }
@@ -120,32 +126,26 @@ function createFullCSV () {
  * @param   {Array<{ account: string, name: string, link: string, keywords: string }>}  users  The parsed CSV data
  */
 function buildUserSelectionForm (users) {
- const container = userListWrapper()
+  const container = userListWrapper()
 
- if (container === null) {
+  if (container === null) {
    console.error('Could not build user selection form: Cannot find wrapper.')
    return
- }
+  }
 
   for (const user of users) {
-    // checks if the is a criterion for excluding/including users
-    if (selctor !== null &&  selector !== "") {
-      if (!user.keywords.toLowerCase().includes(selector.toLowerCase())) {
-      // stops this
-      continue
-      }
-    }
-
 
     // Structure:
     // <div class="input-list-item">
     //   <input name="selected_users" value="user.account" id="user.account">
-    //   <label for="user.account">Account (name)</label>
-    //   <a href="link">"Profile"</a>
-    //  <div>Keywords:
+    //   <label for="user.account">Account</label>
+    //   <a href="link">(name)</a>
+    //   – Keywords: (keywords)
     // </div>
 
    const wrapper = document.createElement('div')
+   //sets created checkbox item to visible. Will be set to 'none' later if a keyword is selected that is not part of this item
+   wrapper.setAttribute('style', 'display: normal;')
    wrapper.classList.add('input-list-item')
 
    const input = document.createElement('input')
@@ -178,14 +178,37 @@ function buildUserSelectionForm (users) {
    }
    wrapper.appendChild(bracketClose)
 
-   const seperator = document.createTextNode(" – ")
 
+
+   // if ('keywords' in user && 'keywords'.trim() !== '') {
+   //   wrapper.appendChild(seperator)
+   //
+   //   const keywords = document.createTextNode("Keywords: " + user.keywords.replaceAll(" ", ", ").replaceAll("_", " "))
+   //   keywords.setAttribute('id', 'keywords-in-checkbox-entry')
+   //   wrapper.appendChild(keywords)
+   // }
    if ('keywords' in user && 'keywords'.trim() !== '') {
+     const seperator = document.createTextNode(" – Keywords: ")
      wrapper.appendChild(seperator)
+     //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
+     const keywordArray = user.keywords.split(" ")
+     const commaseperator = document.createTextNode(', ')
 
-     const keywords = document.createTextNode("Keywords: " + user.keywords.replaceAll(" ", ", ").replaceAll("_", " "))
-     wrapper.appendChild(keywords)
-   }
+     const keywords = document.createElement('span')
+
+     // counter to change seperators depending on position
+     for (i in keywordArray) {
+       if (i !== 0) { // why
+         wrapper.appendChild(commaseperator)
+       }
+       const keyword_item = document.createElement('a')
+       keyword_item.textContent = keywordArray[i].replaceAll("_", " ")
+       keyword_item.setAttribute('value', 'false')
+       keyword_item.setAttribute('name', keywordArray[i])
+       keyword_item.setAttribute('href', '')
+       keyword_item.setAttribuet('class', 'keywordclass')
+       wrapper.appendChild(keyword_item)
+     }
 
 
    // if ('keywords' in user && 'keywords'.trim() !== '') {
@@ -208,6 +231,9 @@ function buildUserSelectionForm (users) {
    //   }
    // }
 
+   // creates full list, but does not print it to the
+   // this is supposed to be a way to print selected elements from the list to the webpage
+   // while still having the ckeboxes
    container.appendChild(wrapper)
   }
 }
@@ -264,5 +290,22 @@ function buildSimpleList (users) {
 
 function filterByKeyword (selected_keyword) {
   const this_keyword = selected_keyword.toLowerCase()
-  buildUserSelectionForm(data, this_keyword)
+  for (checkboxitem in document.getElementByClass('input-list-item') {
+    for (keywordFromEntry in checkboxitem.getElementByClass('keywordclass').toLowerCase) {
+      if (this_keyword.toLowerCase == keywordFromEntry.toLowerCase) { // looks for keyword in entire entry. could be more precise in looking at keyword
+        checkboxitem.getElementByClass('input-list-item').setAttribute('style', 'diplay: normal;')
+        keywordFromEntry.setAttribute('value', true)
+      }
+      else {
+        checkboxitem.getElementByClass('input-list-item').setAttribute('style', 'diplay: none;')
+        keywordFromEntry.setAttribute('value', false)
+      }
+  }
+}
+
+
+function undoFilter () {
+  for (checkboxitem in document.getElementByClass('input-list-item') {
+    checkboxitem.getElementByClass('input-list-item').setAttribute('style', 'diplay: normal;')
+    checkboxitem.getElementByClass('keywordclass').setAttribute('value', false)
 }
