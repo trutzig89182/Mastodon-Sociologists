@@ -1,3 +1,8 @@
+/* makes internal link scroll smoothly */
+html{
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
