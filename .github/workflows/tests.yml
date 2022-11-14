@@ -8,21 +8,20 @@ on:
 jobs:
   tests:
     name: Tests
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ ubuntu-latest ]
-        python-version: [ "3.11" ]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
+
+      - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: "3.11"
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip setuptools wheel
           pip install tox
-      - name: Test with pytest
+
+      - name: Run tests
         run:
           tox -e py
