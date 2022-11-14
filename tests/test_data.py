@@ -17,14 +17,14 @@ class TestData(unittest.TestCase):
         header, *lines = USERS_PATH.read_text().splitlines()
         number_columns = header.count(",")
         errors = [
-            (i, line)
-            for i, line in enumerate(lines, start=2)
+            (line_number, line)
+            for line_number, line in enumerate(lines, start=2)
             if line.count(",") != number_columns
         ]
         if errors:
-            s = "Lines with incorrect number of columns:\n"
+            message = "Lines with incorrect number of columns:\n"
             max_line = max(i for i, _ in errors)
-            m = int(0.5 + math.log10(max_line))
-            for i, line in errors:
-                s += f"[line {i:{m}}]: {line}\n"
-            self.fail(s)
+            width = int(0.5 + math.log10(max_line))
+            for line_number, line in errors:
+                message += f"[line {line_number:{width}}]: {line}\n"
+            self.fail(message)
