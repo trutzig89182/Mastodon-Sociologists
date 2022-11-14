@@ -15,8 +15,10 @@ class TestData(unittest.TestCase):
     def test_users(self):
         """Test the users CSV file has the right number of columns."""
         errors = []
-        for i, line in enumerate(USERS_PATH.read_text().splitlines(), start=1):
-            if line.count(",") != 4:
+        header, *lines = USERS_PATH.read_text().splitlines()
+        number_columns = header.count(",")
+        for i, line in enumerate(lines, start=2):
+            if line.count(",") != number_columns:
                 errors.append((i, line))
         if errors:
             s = "Lines with incorrect number of columns:\n"
