@@ -24,7 +24,7 @@ class TestData(unittest.TestCase):
         if errors:
             s = "Lines with incorrect number of columns:\n"
             max_line = max(i for i, _ in errors)
-            m = int(math.log(max_line))
+            m = int(0.5 + math.log10(max_line))
             for i, line in errors:
                 s += f"[line {i:{m}}]: {line}\n"
             self.fail(s)
