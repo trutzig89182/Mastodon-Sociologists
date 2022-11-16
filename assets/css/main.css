@@ -92,3 +92,11 @@ button#select-none-users {
 button#generate-csv {
   margin-top: 10px;
 }
+
+/* style keywords */
+a.keywordclass:link, a.keywordclass:visited {
+  color: black;
+}
+a.keywordclass:hover {
+  color: green;
+}

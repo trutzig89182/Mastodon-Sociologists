@@ -12,7 +12,7 @@ function generateCSVButton () { return document.getElementById('generate-csv') }
 function allCheckboxes () { return document.querySelectorAll('input[name="selected_users"]') }
 function userListWrapper () { return document.getElementById('user-list') }
 function formElement () { return document.getElementById('main-form') }
-function getKeywords () { return document.getElementsByClass('clickable_keyword')}
+//function getKeywords () { return document.getElementsByClassName('keywordclass') }
 
 // ON LOAD ENTRY POINT
 document.addEventListener('DOMContentLoaded', function () {
@@ -39,21 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
     generateButton.addEventListener('click', generateCSV)
   }
 
-  const keywords = getKeywords()
-  if (keywords !== null) {
-    for keyword in keywords {
-      keyword.addeventlistener('click', function() { // if keyword is clicked, this function is triggered
-        if (keywords.target.value = true) {// if the keyword has already been cklicked, value should be = true; in this case clicking a keyword with the same name should revert in all checkbox items been shown again (set style to display: normal)
-          keywords.target.value = false //this chould probably be done in the undoFilter function
-          undoFilter()
-        } else {     // if the keyword has not yet been clicked trigger filterByKeyword function
-          keywords.target.value = true //this should probably bee done in the filterByKeyword function
-          console.log(keywords.target.name)
-          filterByKeyword(keywords.target.name)
-        }
-      })
-    }
-  }
+  // const keywords = getKeywords()
+  // console.log(keywords)
+  // if (keywords !== null) {
+  //     keywords.addEventListener('click', keywordsSelected)
+  // }
 
   // Now, determine which list we need to build. There are two files available,
   // one that simply spits out a list of account names, and another one that
@@ -123,6 +113,20 @@ function createFullCSV () {
 }
 
 /**
+  * Sets keywords that are selected on selecte true or false
+  */
+function keywordsSelected () { // if keyword is clicked, this function is triggered
+  if (keywords.target.value = true) {// if the keyword has already been cklicked, value should be = true; in this case clicking a keyword with the same name should revert in all checkbox items been shown again (set style to display: normal)
+    keywords.target.value = false //this chould probably be done in the undoFilter function
+    undoFilter()
+  } else {     // if the keyword has not yet been clicked trigger filterByKeyword function
+    keywords.target.value = true //this should probably bee done in the filterByKeyword function
+    console.log(keywords.target.name)
+    filterByKeyword(keywords.target.name)
+  }
+}
+
+/**
  * Builds a form from the CSV data for people to select accounts
  *
  * @param   {Array<{ account: string, name: string, link: string, keywords: string }>}  users  The parsed CSV data
@@ -147,8 +151,8 @@ function buildUserSelectionForm (users) {
 
    const wrapper = document.createElement('div')
    //sets created checkbox item to visible. Will be set to 'none' later if a keyword is selected that is not part of this item
-   wrapper.setAttribute('style', 'display: normal;')
    wrapper.classList.add('input-list-item')
+   wrapper.setAttribute('style', 'display: normal;')
 
    const input = document.createElement('input')
    input.value = user.account
@@ -174,6 +178,7 @@ function buildUserSelectionForm (users) {
      nameAsLink.setAttribute('href', user.link)
      nameAsLink.setAttribute('target', 'blank')
      wrapper.appendChild(nameAsLink)
+     console.log('name with link set')
    } else {
      const nameWithoutLink = document.createTextNode(user.name)
      wrapper.appendChild(nameWithoutLink)
@@ -189,27 +194,29 @@ function buildUserSelectionForm (users) {
    //   keywords.setAttribute('id', 'keywords-in-checkbox-entry')
    //   wrapper.appendChild(keywords)
    // }
-   if ('keywords' in user && 'keywords'.trim() !== '') {
+   if (user.keywords !== null && user.keywords.trim() !== '') {
      const seperator = document.createTextNode(" – Keywords: ")
      wrapper.appendChild(seperator)
      //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
      const keywordArray = user.keywords.split(" ")
+     console.log(user.keywords)
+     console.log(keywordArray)
      const commaseperator = document.createTextNode(', ')
 
      const keywords = document.createElement('span')
 
      // counter to change seperators depending on position
      for (i in keywordArray) {
-       if (i !== 0) { // why
-         wrapper.appendChild(commaseperator)
-       }
+       wrapper.appendChild(commaseperator)
        const keyword_item = document.createElement('a')
        keyword_item.textContent = keywordArray[i].replaceAll("_", " ")
        keyword_item.setAttribute('value', 'false')
        keyword_item.setAttribute('name', keywordArray[i])
        console.log(keyword_item.name)
        keyword_item.setAttribute('href', '')
-       keyword_item.setAttribuet('class', 'keywordclass')
+       keyword_item.setAttribute('class', 'keywordclass')
+       keyword_item.setAttribute('selected', false)
+       console.log("another keyword set")
        wrapper.appendChild(keyword_item)
      }
 
@@ -237,8 +244,9 @@ function buildUserSelectionForm (users) {
    // creates full list, but does not print it to the
    // this is supposed to be a way to print selected elements from the list to the webpage
    // while still having the ckeboxes
-      container.appendChild(wrapper)
+
     }
+    container.appendChild(wrapper)
   }
 }
 
@@ -294,14 +302,14 @@ function buildSimpleList (users) {
 // makes entries without selected keyword invisible
 function filterByKeyword (selected_keyword) {
   const this_keyword = selected_keyword.toLowerCase()
-  for (checkboxitem in document.getElementByClass('input-list-item')) {
-    for (keywordFromEntry in checkboxitem.getElementByClass('keywordclass').toLowerCase) {
+  for (checkboxitem in document.getElementsByClassName('input-list-item')) {
+    for (keywordFromEntry in checkboxitem.getElementByClassName('keywordclass').toLowerCase) {
       if (this_keyword.toLowerCase == keywordFromEntry.toLowerCase) { // looks for keyword in entire entry. could be more precise in looking at keyword
-        checkboxitem.getElementByClass('input-list-item').setAttribute('style', 'diplay: normal;')
+        checkboxitem.getElementByClassName('input-list-item').setAttribute('style', 'diplay: normal;')
         keywordFromEntry.setAttribute('value', true)
       }
       else {
-        checkboxitem.getElementByClass('input-list-item').setAttribute('style', 'diplay: none;')
+        checkboxitem.getElementsByClassName('input-list-item').setAttribute('style', 'diplay: none;')
         keywordFromEntry.setAttribute('value', false)
       }
     }
@@ -310,8 +318,8 @@ function filterByKeyword (selected_keyword) {
 
 // sets all entries to visible
 function undoFilter () {
-  for (checkboxitem in document.getElementByClass('input-list-item')) {
-    checkboxitem.getElementByClass('input-list-item').setAttribute('style', 'diplay: normal;')
-    checkboxitem.getElementByClass('keywordclass').setAttribute('value', false)
+  for (checkboxitem in document.getElementsByClassName('input-list-item')) {
+    checkboxitem.getElementsByClassName('input-list-item').setAttribute('style', 'diplay: normal;')
+    checkboxitem.getElementsByClassName('keywordclass').setAttribute('value', false)
   }
 }
