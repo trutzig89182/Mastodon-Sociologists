@@ -180,7 +180,6 @@ function buildUserSelectionForm (users) {
      wrapper.appendChild(nameAsLink)
      console.log('name with link set')
    } else {
-     const nameWithoutLink = document.createTextNode(user.name)
      wrapper.appendChild(nameWithoutLink)
    }
    wrapper.appendChild(bracketClose)
@@ -195,29 +194,34 @@ function buildUserSelectionForm (users) {
    //   wrapper.appendChild(keywords)
    // }
    if (user.keywords !== null && user.keywords.trim() !== '') {
-     const seperator = document.createTextNode(" – Keywords: ")
-     wrapper.appendChild(seperator)
+     const keywordSeperator = document.createTextNode(" – Keywords: ")
+     wrapper.appendChild(keywordSeperator)
      //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
      const keywordArray = user.keywords.split(" ")
-     console.log(user.keywords)
      console.log(keywordArray)
-     const commaseperator = document.createTextNode(', ')
 
-     const keywords = document.createElement('span')
 
      // counter to change seperators depending on position
      for (i in keywordArray) {
-       wrapper.appendChild(commaseperator)
+       console.log(i)
+       if (i > 0) {
+         console.log("adding commaseperator because i is " + i)
+         const commaSeperator = document.createTextNode(', ')
+         wrapper.appendChild(commaSeperator)
+       } else {
+         console.log("did not set seperator")
+       }
        const keyword_item = document.createElement('a')
-       keyword_item.textContent = keywordArray[i].replaceAll("_", " ")
+       keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
        keyword_item.setAttribute('value', 'false')
-       keyword_item.setAttribute('name', keywordArray[i])
+       keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
        console.log(keyword_item.name)
        keyword_item.setAttribute('href', '')
        keyword_item.setAttribute('class', 'keywordclass')
-       keyword_item.setAttribute('selected', false)
-       console.log("another keyword set")
+       //keyword_item.setAttribute('selected', false)
        wrapper.appendChild(keyword_item)
+       console.log(keywordArray.length)
+
      }
 
 
