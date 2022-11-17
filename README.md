@@ -40,7 +40,7 @@ Once you have done that, you can simply change the Title. I suggest you also cha
 
 ## Additional tools for adding new accounts to the CSV files
 
-@eyssette has created a nice little bookmark script to get relevant information for adding an account in one click. You can find it here: https://gist.github.com/eyssette/a3c0df2a52b43ca1e2c78299b97c6306
+[@eyssette](https://gist.github.com/eyssette) has created a nice little bookmark script to get relevant information for adding an account in one click. You can find it here: https://gist.github.com/eyssette/a3c0df2a52b43ca1e2c78299b97c6306
 
 Also, I have made a basic form, that will create an email with a preformated string for a new account entry for the CSV file. It’s work in progress, but you can find it here: https://github.com/trutzig89182/AoM-add-user
 
