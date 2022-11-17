@@ -12,7 +12,11 @@ function generateCSVButton () { return document.getElementById('generate-csv') }
 function allCheckboxes () { return document.querySelectorAll('input[name="selected_users"]') }
 function userListWrapper () { return document.getElementById('user-list') }
 function formElement () { return document.getElementById('main-form') }
-//function getKeywords () { return document.getElementsByClassName('keywordclass') }
+
+function getKeywords () {
+  console.log(document.getElementsByClassName('keywordclass'))
+  return document.getElementsByClassName('keywordclass')
+}
 
 // ON LOAD ENTRY POINT
 document.addEventListener('DOMContentLoaded', function () {
@@ -39,12 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
     generateButton.addEventListener('click', generateCSV)
   }
 
-  // const keywords = getKeywords()
-  // console.log(keywords)
-  // if (keywords !== null) {
-  //     keywords.addEventListener('click', keywordsSelected)
-  // }
-
   // Now, determine which list we need to build. There are two files available,
   // one that simply spits out a list of account names, and another one that
   // builds a form for people to select users. We can determine which of the
@@ -53,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
   .then(function (data) {
     if (formElement() !== null) {
       // We're on the form page
-      const no_selector = ""
+      const no_selector = "" // sets empty selector. Will be re-set if keyword is clicked
       buildUserSelectionForm(data, no_selector)
     } else {
       // We're on the tootformat page
@@ -86,6 +84,15 @@ async function getCSVData () {
   })
 }
 
+
+console.log(getKeywords())
+const keywords = getKeywords()
+console.log(keywords)
+if (keywords !== null) {
+  for (keyword in keywords) {}
+    keyword.onclick = keywordsSelected(keywords)
+}
+
 /**
  * Selects all checkboxes on the page
  */
@@ -115,14 +122,14 @@ function createFullCSV () {
 /**
   * Sets keywords that are selected on selecte true or false
   */
-function keywordsSelected () { // if keyword is clicked, this function is triggered
-  if (keywords.target.value = true) {// if the keyword has already been cklicked, value should be = true; in this case clicking a keyword with the same name should revert in all checkbox items been shown again (set style to display: normal)
-    keywords.target.value = false //this chould probably be done in the undoFilter function
+function keywordsSelected (keywords) { // if keyword is clicked, this function is triggered
+  if (keywords.target.getAttribute('value') = true) {// if the keyword has already been cklicked, value should be = true; in this case clicking a keyword with the same name should revert in all checkbox items been shown again (set style to display: normal)
+    keywords.target.getAttribute('value') = false //this chould probably be done in the undoFilter function
     undoFilter()
   } else {     // if the keyword has not yet been clicked trigger filterByKeyword function
-    keywords.target.value = true //this should probably bee done in the filterByKeyword function
-    console.log(keywords.target.name)
-    filterByKeyword(keywords.target.name)
+    keywords.target.getAttribute('value') = true //this should probably bee done in the filterByKeyword function
+    console.log(keywords.target.getAttribute('name'))
+    filterByKeyword(keywords.target.getAttribute('name'))
   }
 }
 
@@ -178,7 +185,6 @@ function buildUserSelectionForm (users) {
      nameAsLink.setAttribute('href', user.link)
      nameAsLink.setAttribute('target', 'blank')
      wrapper.appendChild(nameAsLink)
-     console.log('name with link set')
    } else {
      wrapper.appendChild(nameWithoutLink)
    }
@@ -186,70 +192,35 @@ function buildUserSelectionForm (users) {
 
 
 
-   // if ('keywords' in user && 'keywords'.trim() !== '') {
-   //   wrapper.appendChild(seperator)
-   //
-   //   const keywords = document.createTextNode("Keywords: " + user.keywords.replaceAll(" ", ", ").replaceAll("_", " "))
-   //   keywords.setAttribute('id', 'keywords-in-checkbox-entry')
-   //   wrapper.appendChild(keywords)
-   // }
+   /*
+    * Checks if user has a keyword string and seperates it into an
+    + array with seperate keywords if that is the case
+    */
    if (user.keywords !== null && user.keywords.trim() !== '') {
      const keywordSeperator = document.createTextNode(" – Keywords: ")
      wrapper.appendChild(keywordSeperator)
      //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
      const keywordArray = user.keywords.split(" ")
-     console.log(keywordArray)
 
 
-     // counter to change seperators depending on position
+     // append keywords as <a> elements and seperate them by a comma
      for (i in keywordArray) {
-       console.log(i)
        if (i > 0) {
-         console.log("adding commaseperator because i is " + i)
          const commaSeperator = document.createTextNode(', ')
          wrapper.appendChild(commaSeperator)
-       } else {
-         console.log("did not set seperator")
        }
        const keyword_item = document.createElement('a')
        keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
        keyword_item.setAttribute('value', 'false')
        keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
-       console.log(keyword_item.name)
        keyword_item.setAttribute('href', '')
        keyword_item.setAttribute('class', 'keywordclass')
        //keyword_item.setAttribute('selected', false)
        wrapper.appendChild(keyword_item)
-       console.log(keywordArray.length)
-
      }
 
-
-   // if ('keywords' in user && 'keywords'.trim() !== '') {
-   //   wrapper.appendChild(breakseperator)
-   //
-   //   const keywords = document.createElement('span')
-   //   //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
-   //   const keywordArray = user.keywords.split(" ")
-   //   // counter to change seperators depending on position
-   //   for (i in keywordArray) {
-   //     if (i !== 0) {
-   //       wrapper.appendChild(commaseperator)
-   //     }
-   //     const keyword_item = document.createElement('a')
-   //     keyword_item.textContent = keywordArray[i].replaceAll("_", " ")
-   //     keyword_item.setAttribute('value', keywordArray[i])
-   //     keyword_item.setAttribute('name', 'clickable_keyword')
-   //     keyword_item.setAttribute('href', '')
-   //     wrapper.appendChild(keyword_item)
-   //   }
-   // }
-
-   // creates full list, but does not print it to the
-   // this is supposed to be a way to print selected elements from the list to the webpage
-   // while still having the ckeboxes
-
     }
+    // appends this accounts checkboxlist item to the form
     container.appendChild(wrapper)
   }
 }
