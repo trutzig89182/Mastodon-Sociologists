@@ -12,11 +12,7 @@ function generateCSVButton () { return document.getElementById('generate-csv') }
 function allCheckboxes () { return document.querySelectorAll('input[name="selected_users"]') }
 function userListWrapper () { return document.getElementById('user-list') }
 function formElement () { return document.getElementById('main-form') }
-
-function getKeywords () {
-  console.log(document.getElementsByClassName('keywordclass'))
-  return document.getElementsByClassName('keywordclass')
-}
+function getKeywords () { return document.getElementsByClassName('keywordclass')}
 
 // ON LOAD ENTRY POINT
 document.addEventListener('DOMContentLoaded', function () {
@@ -58,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function () {
       buildSimpleList(data)
     }
   })
+
+  //creates a list of all Keyword Elements once the checkboslist is loaded
+  const keywordElements = getKeywords()
 })
 
 /**
