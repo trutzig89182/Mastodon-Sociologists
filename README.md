@@ -38,6 +38,12 @@ If you want to use a preview picture, put it in `resources/images/` and name it 
 In the `folder create-preview-image/` you find the file `preview-image.sla`. It is a template for your XY on Mastodon preview image. Please load the `Mastodon Mascot (Greeting).png` image from https://commons.wikimedia.org/wiki/File:Mastodon_Mascot_(Greeting).png and save it in the same folder. Now you can open `preview-image.sla` with the FOSS layout program [Scribus](https://www.scribus.net/). You probably will have to relink the images within the file to the PNG you downloaded. Perhaps you will also have to choose another font for the text.
 Once you have done that, you can simply change the Title. I suggest you also change the background collour to make the preview images more distinguishable. Export your image as PNG. Make sure your file ist named preview-image.png and store it in `/resources/images/`. In one last step you have to adapt the links to your file in the Metatag section in `index.html`.
 
+## Additional tools for adding new accounts to the CSV files
+
+[@eyssette](https://gist.github.com/eyssette) has created a nice little bookmark script to get relevant information for adding an account in one click. You can find it here: https://gist.github.com/eyssette/a3c0df2a52b43ca1e2c78299b97c6306
+
+Also, I have made a basic form, that will create an email with a preformated string for a new account entry for the CSV file. It’s work in progress, but you can find it here: https://github.com/trutzig89182/AoM-add-user
+
 
 ## License
 
