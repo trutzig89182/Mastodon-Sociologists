@@ -46,8 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
   .then(function (data) {
     if (formElement() !== null) {
       // We're on the form page
-      const no_selector = "" // sets empty selector. Will be re-set if keyword is clicked
-      buildUserSelectionForm(data, no_selector)
+      buildUserSelectionForm(data)
     } else {
       // We're on the tootformat page
       buildSimpleList(data)
@@ -105,34 +104,30 @@ function createFullCSV () {
   generateCSV()
 }
 
-
 /**
  * Builds a form from the CSV data for people to select accounts
  *
  * @param   {Array<{ account: string, name: string, link: string, keywords: string }>}  users  The parsed CSV data
  */
 function buildUserSelectionForm (users) {
-  const container = userListWrapper()
+ const container = userListWrapper()
 
-  if (container === null) {
+ if (container === null) {
    console.error('Could not build user selection form: Cannot find wrapper.')
    return
-  }
+ }
 
-  for (const user of users) {
-
-    // Structure:
-    // <div class="input-list-item">
-    //   <input name="selected_users" value="user.account" id="user.account">
-    //   <label for="user.account">Account</label>
-    //   <a href="link">(name)</a>
-    //   – Keywords: (keywords)
-    // </div>
+ for (const user of users) {
+   // Structure:
+   // <div class="input-list-item">
+   //   <input name="selected_users" value="user.account" id="user.account">
+   //   <label for="user.account">Account (name)</label>
+   //   <a href="link">"Profile"</a>
+   //  <div>Keywords:
+   // </div>
 
    const wrapper = document.createElement('div')
-   //sets created checkbox item to visible. Will be set to 'none' later if a keyword is selected that is not part of this item
    wrapper.classList.add('input-list-item')
-   wrapper.setAttribute('style', 'display: normal;')
 
    const input = document.createElement('input')
    input.value = user.account
@@ -159,42 +154,21 @@ function buildUserSelectionForm (users) {
      nameAsLink.setAttribute('target', 'blank')
      wrapper.appendChild(nameAsLink)
    } else {
+     const nameWithoutLink = document.createTextNode(user.name)
      wrapper.appendChild(nameWithoutLink)
    }
    wrapper.appendChild(bracketClose)
 
+   const seperator = document.createTextNode(" – ")
 
-
-   /*
-    * Checks if user has a keyword string and seperates it into an
-    + array with seperate keywords if that is the case
-    */
    if (user.keywords !== null && user.keywords.trim() !== '') {
-     const keywordSeperator = document.createTextNode(" – Keywords: ")
-     wrapper.appendChild(keywordSeperator)
-     //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
-     const keywordArray = user.keywords.split(" ")
+     wrapper.appendChild(seperator)
 
+     const keywords = document.createTextNode("Keywords: " + user.keywords.replaceAll(" ", ", ").replaceAll("_", " "))
+     wrapper.appendChild(keywords)
+   }
 
-     // append keywords as <a> elements and seperate them by a comma
-     for (i in keywordArray) {
-       if (i > 0) {
-         const commaSeperator = document.createTextNode(', ')
-         wrapper.appendChild(commaSeperator)
-       }
-       const keyword_item = document.createElement('a')
-       keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
-       keyword_item.setAttribute('selected', false)
-       console.log('create new attribute selected = false for keyword')
-       keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
-       keyword_item.setAttribute('onclick', 'selectedKeyword(this)')
-       keyword_item.setAttribute('class', 'keywordclass')
-       wrapper.appendChild(keyword_item)
-     }
-
-    }
-    // appends this accounts checkboxlist item to the form
-    container.appendChild(wrapper)
+   container.appendChild(wrapper)
   }
 }
 
@@ -244,60 +218,5 @@ function buildSimpleList (users) {
     const li = document.createElement('li')
     li.textContent = `${user.account} (${user.name})`
     container.appendChild(li)
-  }
-}
-
-
-/**
- * checks if keyword clicked is already selected and refers to filterByKeyword() or undoFiler() based on this.
- */
-function selectedKeyword (keywordElement) {
-  if (keywordElement.getAttribute('selected') == 'true') {
-    undoFilter('normal')
-  } else if (keywordElement.getAttribute('selected') == 'false') {
-    filterByKeyword(keywordElement)
-  } else {
-    const thisKeywordsCheckboxElement = keywordElement.parentElement.firstChild.id
-  }
-
-}
-
-
-// makes entries without selected keyword invisible
-function filterByKeyword (keywordElement) {
-  const this_keyword = keywordElement.name.toLowerCase()
-  const checkboxListElements = document.getElementsByClassName('input-list-item')
-  const allKeywordElements = document.getElementsByClassName('keywordclass')
-
-  // sets all elements to not selected and invisible before making only selected elements visible
-  for (var i = 0; i < checkboxListElements.length; i++) {
-    //console.log('set to invisible')
-    checkboxListElements.item(i).style.display = 'none' //setAttribute('style', 'diplay: none;')
-    //console.log(checkboxListElements.item(i).getAttribute('style'))
-  }
-
-  // setzt alle keyword.selected auf false (um dann nur die keywords, die dem aktuellen entsprechen auf true zu setzen.)
-  for (var i = 0; i < allKeywordElements.length; i++) {
-    allKeywordElements.item(i).setAttribute('selected', false)
-  }
-
-  for (var i = 0; i < allKeywordElements.length; i++) {
-    if (allKeywordElements.item(i).name.toLowerCase() == this_keyword) { // looks for keyword in entire entry. could be more precise in looking at keyword
-      allKeywordElements.item(i).parentElement.setAttribute('style', 'display: normal;')//setAttribute('style', 'diplay: normal;')
-      allKeywordElements.item(i).setAttribute('selected', true) //setAttribute('selected', true)
-      console.log('set selected attribute of current keyword to true:', allKeywordElements.item(i).getAttribute('selected'))
-    }
-  }
-}
-
-// sets all entries to visible and all keyword’s selected attribute to false
-function undoFilter () {
-  const checkboxListElements = document.getElementsByClassName('input-list-item')
-  const allKeywordElements = document.getElementsByClassName('keywordclass')
-  for (var i = 0; i < checkboxListElements.length; i++) {
-    checkboxListElements.item(i).setAttribute('style', 'display: normal;')
-  }
-  for (var i = 0; i < allKeywordElements.length; i++) {
-    allKeywordElements.item(i).setAttribute('selected', false)
   }
 }
