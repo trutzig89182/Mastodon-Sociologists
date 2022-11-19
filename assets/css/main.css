@@ -99,5 +99,8 @@ a.keywordclass:link, a.keywordclass:visited {
   text-decoration: none;
 }
 a.keywordclass:hover {
+  text-shadow: 0.6px 0.6px grey;
+}
+a.keywordclass[selected="true"] {
   color: green;
 }

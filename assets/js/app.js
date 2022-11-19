@@ -12,7 +12,6 @@ function generateCSVButton () { return document.getElementById('generate-csv') }
 function allCheckboxes () { return document.querySelectorAll('input[name="selected_users"]') }
 function userListWrapper () { return document.getElementById('user-list') }
 function formElement () { return document.getElementById('main-form') }
-function getKeywords () { return document.getElementsByClassName('keywordclass')}
 
 // ON LOAD ENTRY POINT
 document.addEventListener('DOMContentLoaded', function () {
@@ -54,9 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
       buildSimpleList(data)
     }
   })
-
-  //creates a list of all Keyword Elements once the checkboslist is loaded
-  const keywordElements = getKeywords()
 })
 
 /**
@@ -81,15 +77,6 @@ async function getCSVData () {
     }
     return isValid
   })
-}
-
-
-console.log(getKeywords())
-const keywords = getKeywords()
-console.log(keywords)
-if (keywords !== null) {
-  for (keyword in keywords) {}
-    keyword.onclick = keywordsSelected(keywords)
 }
 
 /**
@@ -118,19 +105,6 @@ function createFullCSV () {
   generateCSV()
 }
 
-/**
-  * Sets keywords that are selected on selecte true or false
-  */
-function keywordsSelected (keywords) { // if keyword is clicked, this function is triggered
-  if (keywords.target.getAttribute('value') = true) {// if the keyword has already been cklicked, value should be = true; in this case clicking a keyword with the same name should revert in all checkbox items been shown again (set style to display: normal)
-    keywords.target.getAttribute('value') = false //this chould probably be done in the undoFilter function
-    undoFilter()
-  } else {     // if the keyword has not yet been clicked trigger filterByKeyword function
-    keywords.target.getAttribute('value') = true //this should probably bee done in the filterByKeyword function
-    console.log(keywords.target.getAttribute('name'))
-    filterByKeyword(keywords.target.getAttribute('name'))
-  }
-}
 
 /**
  * Builds a form from the CSV data for people to select accounts
@@ -210,11 +184,11 @@ function buildUserSelectionForm (users) {
        }
        const keyword_item = document.createElement('a')
        keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
-       keyword_item.setAttribute('value', 'false')
+       keyword_item.setAttribute('selected', false)
+       console.log('create new attribute selected = false for keyword')
        keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
-       keyword_item.setAttribute('href', '')
+       keyword_item.setAttribute('onclick', 'selectedKeyword(this)')
        keyword_item.setAttribute('class', 'keywordclass')
-       //keyword_item.setAttribute('selected', false)
        wrapper.appendChild(keyword_item)
      }
 
@@ -273,27 +247,57 @@ function buildSimpleList (users) {
   }
 }
 
+
+/**
+ * checks if keyword clicked is already selected and refers to filterByKeyword() or undoFiler() based on this.
+ */
+function selectedKeyword (keywordElement) {
+  if (keywordElement.getAttribute('selected') == 'true') {
+    undoFilter('normal')
+  } else if (keywordElement.getAttribute('selected') == 'false') {
+    filterByKeyword(keywordElement)
+  } else {
+    const thisKeywordsCheckboxElement = keywordElement.parentElement.firstChild.id
+  }
+
+}
+
+
 // makes entries without selected keyword invisible
-function filterByKeyword (selected_keyword) {
-  const this_keyword = selected_keyword.toLowerCase()
-  for (checkboxitem in document.getElementsByClassName('input-list-item')) {
-    for (keywordFromEntry in checkboxitem.getElementByClassName('keywordclass').toLowerCase) {
-      if (this_keyword.toLowerCase == keywordFromEntry.toLowerCase) { // looks for keyword in entire entry. could be more precise in looking at keyword
-        checkboxitem.getElementByClassName('input-list-item').setAttribute('style', 'diplay: normal;')
-        keywordFromEntry.setAttribute('value', true)
-      }
-      else {
-        checkboxitem.getElementsByClassName('input-list-item').setAttribute('style', 'diplay: none;')
-        keywordFromEntry.setAttribute('value', false)
-      }
+function filterByKeyword (keywordElement) {
+  const this_keyword = keywordElement.name.toLowerCase()
+  const checkboxListElements = document.getElementsByClassName('input-list-item')
+  const allKeywordElements = document.getElementsByClassName('keywordclass')
+
+  // sets all elements to not selected and invisible before making only selected elements visible
+  for (var i = 0; i < checkboxListElements.length; i++) {
+    //console.log('set to invisible')
+    checkboxListElements.item(i).style.display = 'none' //setAttribute('style', 'diplay: none;')
+    //console.log(checkboxListElements.item(i).getAttribute('style'))
+  }
+
+  // setzt alle keyword.selected auf false (um dann nur die keywords, die dem aktuellen entsprechen auf true zu setzen.)
+  for (var i = 0; i < allKeywordElements.length; i++) {
+    allKeywordElements.item(i).setAttribute('selected', false)
+  }
+
+  for (var i = 0; i < allKeywordElements.length; i++) {
+    if (allKeywordElements.item(i).name.toLowerCase() == this_keyword) { // looks for keyword in entire entry. could be more precise in looking at keyword
+      allKeywordElements.item(i).parentElement.setAttribute('style', 'display: normal;')//setAttribute('style', 'diplay: normal;')
+      allKeywordElements.item(i).setAttribute('selected', true) //setAttribute('selected', true)
+      console.log('set selected attribute of current keyword to true:', allKeywordElements.item(i).getAttribute('selected'))
     }
   }
 }
 
-// sets all entries to visible
+// sets all entries to visible and all keyword’s selected attribute to false
 function undoFilter () {
-  for (checkboxitem in document.getElementsByClassName('input-list-item')) {
-    checkboxitem.getElementsByClassName('input-list-item').setAttribute('style', 'diplay: normal;')
-    checkboxitem.getElementsByClassName('keywordclass').setAttribute('value', false)
+  const checkboxListElements = document.getElementsByClassName('input-list-item')
+  const allKeywordElements = document.getElementsByClassName('keywordclass')
+  for (var i = 0; i < checkboxListElements.length; i++) {
+    checkboxListElements.item(i).setAttribute('style', 'display: normal;')
+  }
+  for (var i = 0; i < allKeywordElements.length; i++) {
+    allKeywordElements.item(i).setAttribute('selected', false)
   }
 }
