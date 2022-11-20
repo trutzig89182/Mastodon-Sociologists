@@ -159,7 +159,9 @@ function buildUserSelectionForm (users) {
      nameAsLink.setAttribute('target', 'blank')
      wrapper.appendChild(nameAsLink)
    } else {
+     const nameWithoutLink = document.createTextNode(user.name)
      wrapper.appendChild(nameWithoutLink)
+     console.error('Profile URL for ' + user.name + ' is missing.')
    }
    wrapper.appendChild(bracketClose)
 
