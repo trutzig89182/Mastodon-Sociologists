@@ -171,7 +171,7 @@ function buildUserSelectionForm (users) {
     * Checks if user has a keyword string and seperates it into an
     + array with seperate keywords if that is the case
     */
-   if (user.keywords !== null && user.keywords.trim() !== '') {
+    if (typeof user.keywords !== 'undefined' && user.keywords !== null && user.keywords.trim() !== '') {
      const keywordSeperator = document.createTextNode(" – Keywords: ")
      wrapper.appendChild(keywordSeperator)
      //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
