@@ -3,3 +3,9 @@
 
 # Build directory
 dist
+
+.tox
+*.pyc
+
+# IntelliJ Editor data
+.idea
