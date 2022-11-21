@@ -178,27 +178,51 @@ function buildUserSelectionForm (users) {
      const keywordArray = user.keywords.split(" ")
 
 
-     // append keywords as <a> elements and seperate them by a comma
-     for (i in keywordArray) {
-       if (i > 0) {
-         const commaSeperator = document.createTextNode(', ')
-         wrapper.appendChild(commaSeperator)
-       }
-       const keyword_item = document.createElement('a')
-       keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
-       keyword_item.setAttribute('selected', false)
-       console.log('create new attribute selected = false for keyword')
-       keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
-       keyword_item.setAttribute('onclick', 'selectedKeyword(this)')
-       keyword_item.setAttribute('class', 'keywordclass')
-       wrapper.appendChild(keyword_item)
+         // append keywords as <a> elements and seperate them by a comma
+         for (i in keywordArray) {
+           if (i > 0) {
+             const commaSeperator = document.createTextNode(', ')
+             wrapper.appendChild(commaSeperator)
+           }
+           const keyword_item = document.createElement('a')
+           keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
+           keyword_item.setAttribute('selected', false)
+           //console.log('create new attribute selected = false for keyword')
+           keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
+           keyword_item.setAttribute('onclick', 'selectedKeyword(this)')
+           keyword_item.setAttribute('class', 'keywordclass')
+           wrapper.appendChild(keyword_item)
+         }
      }
 
-   if ('language' in user && 'language'.trim() !== '') { //checks if the row has a cell "language" and it is not empty
-    wrapper.appendChild(seperator) //adds – to seperate language from keywords
-    const language = document.createTextNode("Language(s): " + user.language.trim()) // creates a text element for the language
-    wrapper.appendChild(language) // adds this text-element to the checkbox element printed to the webpage
-  }
+   if (typeof user.language !== 'undefined' && user.language !== null && user.language.trim() !== '') { //checks if the row has a cell "language" and it is not empty
+    const languageSeperator =  document.createTextNode(" – Language(s): ")
+    wrapper.appendChild(languageSeperator) //adds – to seperate language from keywords
+    const languageArray = user.language.split(' ')
+    const allowedNumberOfLanguages = 3
+
+        // append language(s) as <a> elements and seperate them by a comma
+        for (i in languageArray) {
+            if (i > 0  && i < allowedNumberOfLanguages) {
+                const commaSeperator = document.createTextNode(', ')
+                wrapper.appendChild(commaSeperator)
+            }
+
+            // limit number of language to 3
+            if (i < allowedNumberOfLanguages) {
+                const languageItem = document.createElement('a')
+                languageItem.textContent = languageArray[i].trim().toLowerCase()
+                languageItem.setAttribute('selected', false)
+                console.log('create new attribute selected = false for language')
+                languageItem.setAttribute('name', languageArray[i].trim().toLowerCase())
+                languageItem.setAttribute('onclick', 'selectedLanguage(this)')
+                languageItem.setAttribute('class', 'languageclass')
+                wrapper.appendChild(languageItem)
+            }
+
+
+        }
+    }
 
    container.appendChild(wrapper)
   }
@@ -255,11 +279,11 @@ function buildSimpleList (users) {
 
 
 /**
- * checks if keyword clicked is already selected and refers to filterByKeyword() or undoFiler() based on this.
+ * checks if keyword clicked is already selected and refers to filterByKeyword() or undoKeywordFiler() based on this.
  */
 function selectedKeyword (keywordElement) {
   if (keywordElement.getAttribute('selected') == 'true') {
-    undoFilter('normal')
+    undoKeywordFilter('normal')
   } else if (keywordElement.getAttribute('selected') == 'false') {
     filterByKeyword(keywordElement)
   } else {
@@ -297,7 +321,7 @@ function filterByKeyword (keywordElement) {
 }
 
 // sets all entries to visible and all keyword’s selected attribute to false
-function undoFilter () {
+function undoKeywordFilter () {
   const checkboxListElements = document.getElementsByClassName('input-list-item')
   const allKeywordElements = document.getElementsByClassName('keywordclass')
   for (var i = 0; i < checkboxListElements.length; i++) {
@@ -305,5 +329,63 @@ function undoFilter () {
   }
   for (var i = 0; i < allKeywordElements.length; i++) {
     allKeywordElements.item(i).setAttribute('selected', false)
+  }
+}
+
+
+
+/**
+ * checks if language clicked is already selected and refers to filterByLanguage() or undoLanguageFiler() based on this.
+ */
+
+function selectedLanguage (element) {
+  if (element.getAttribute('selected') == 'true') {
+    undoLanguageFilter('normal')
+  } else if (element.getAttribute('selected') == 'false') {
+    filterByLanguage(element)
+  } else {
+    const thisLanguageCheckboxElement = element.parentElement.firstChild.id
+    console.error(thisLanguageCheckboxElement + 'is faulty')
+  }
+
+}
+
+
+// makes entries without selected langueges invisible
+function filterByLanguage (element) {
+  const this_language = element.name.toLowerCase()
+  const checkboxListElements = document.getElementsByClassName('input-list-item')
+  const allLanguageElements = document.getElementsByClassName('languageclass')
+
+  // sets all elements to not selected and invisible before making only selected elements visible
+  for (var i = 0; i < checkboxListElements.length; i++) {
+    //console.log('set to invisible')
+    checkboxListElements.item(i).style.display = 'none' //setAttribute('style', 'diplay: none;')
+    //console.log(checkboxListElements.item(i).getAttribute('style'))
+  }
+
+  // setzt alle langages mit selected == true auf false (um dann nur die languages, die dem aktuellen entsprechen auf true zu setzen.)
+  for (var i = 0; i < allLanguageElements.length; i++) {
+    allLanguageElements.item(i).setAttribute('selected', false)
+  }
+
+  for (var i = 0; i < allLanguageElements.length; i++) {
+    if (allLanguageElements.item(i).name.toLowerCase() == this_language) { // looks for languages in entire entry. could be more precise in looking at keyword
+      allLanguageElements.item(i).parentElement.setAttribute('style', 'display: normal;')
+      allLanguageElements.item(i).setAttribute('selected', true)
+      console.log('set selected attribute of current language to true:', allLanguageElements.item(i).getAttribute('selected'))
+    }
+  }
+}
+
+// sets all entries to visible and all langueges’s selected attribute to false
+function undoLanguageFilter () {
+  const checkboxListElements = document.getElementsByClassName('input-list-item')
+  const allLanguageElements = document.getElementsByClassName('languageclass')
+  for (var i = 0; i < checkboxListElements.length; i++) {
+    checkboxListElements.item(i).setAttribute('style', 'display: normal;')
+  }
+  for (var i = 0; i < allLanguageElements.length; i++) {
+    allLanguageElements.item(i).setAttribute('selected', false)
   }
 }

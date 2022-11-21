@@ -94,13 +94,13 @@ button#generate-csv {
 }
 
 /* style keywords */
-a.keywordclass:link, a.keywordclass:visited {
+a.keywordclass:link, a.keywordclass:visited, a.languageclass:link, a.languageclass:visited {
   color: black;
   text-decoration: none;
 }
-a.keywordclass:hover {
+a.keywordclass:hover, a.languageclass:hover {
   text-shadow: 0.6px 0.6px grey;
 }
-a.keywordclass[selected="true"] {
+a.keywordclass[selected="true"], a.languageclass[selected="true"] {
   color: green;
 }
