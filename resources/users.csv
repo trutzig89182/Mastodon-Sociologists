@@ -1,7 +1,23 @@
 account,name,link,keywords,language
+@Alba@sciences.social,Alba Lanau,https://sciences.social/@Alba,poverty childhood social policy,
+@lecoursonnais@sciences.social,Maël Lecoursonnais,https://sciences.social/@lecoursonnais,stratification spatial_inequalities causality,en fr
+@pierre_bat@mastodon.social,Pierre Bataille,https://mastodon.social/@pierre_bat,,fr
+@mtorre@sciences.social,Marga Torre,https://sciences.social/@mtorre,work gender_inequalities computational_social_science,es en
+@sociologian@mastodon.social,Michael Pollard,https://mastodon.social/@sociologian,,
+@ShonaS@mastodonapp.uk,Shona S,https://mastodonapp.uk/@ShonaS,Black_Studies Intersectionality Disability_Studies,en
+@asgelabert@sciences.social,Albert Sánchez-Gelabert,https://sciences.social/@asgelabert,Higher_Education Culture,ca es en
+@as_sAlone@mastodon.social,Anna Sofia Salonen,https://mastodon.social/@as_sAlone,food inequality religion,en fi
+@kalf@sciences.social,Fabian Kalleitner,https://sciences.social/@kalf,economic_sociology social_inequality survey_methodology,
+@moorehead@sciences.social,Robert Moorehead,https://sciences.social/@moorehead,Race Immigration Japan,en ja es
+@CRISPP_PolPhil@home.social,CRISPP,https://home.social/@CRISPP_PolPhil,Social_and_Political_Philosophy,en
+@rpbellamy1@mastodon.uno,Richard Bellamy,https://mastodon.uno/@rpbellamy1,Social_Theory Political_Theory Legal_Theory,en fr it de
+@defauconberg@fediscience.org,Âri de Fauconberg,https://fediscience.org/@defauconberg,Organizations Climate Sustainability,en fr
+@bjoernkrey@mastodon.social,Björn Krey,https://mastodon/@bjoernkrey,qualitative_research dream_research,de
+@Janinedahinden@mstdn.social,–,https://mstdn.social/Janinedahinden,Migration (De)migranticization Mobility,
+@alessiodangelo@mas.to,Alessio D'Angelo,https://mas.to/@alessiodangelo,,
 @mzv@climatejustice.social,Matthias Z Varul,https://climatejustice.social/@mzv,cultural_sociology professions social_theory,en de
 @TaylorBrooks@mastodon.world,Taylor J. Brooks,https://mastodon.world/@TaylorBrooks,Migration Immigration Racism,en
-@drewburns,Drew Burns,https://mstdn.party/@drewburns,small_town_crime social_control substance_use,en
+@drewburns@mstdn.party,Drew Burns,https://mstdn.party/@drewburns,small_town_crime social_control substance_use,en
 @aaronreeves@sciences.social,Aaron Reeves,https://sciences.social/@aaronreeves,elites political_economy_of_health welfare_reform,
 @sinimalesevic@mastodon.online,Sinisa Malesevic,https://mastodon.online/@sinimalesevic,Nationalism War Violence,En
 @dirkvl@ruhr.social,Dirk vom Lehn,https://ruhr.social/@dirkvl,Ethnomethodology_and_Video Interactionism Art_Museums,en
@@ -40,7 +56,7 @@ account,name,link,keywords,language
 @CPCpopulation@sciences.social,Centre for Population Change,https://sciences.social/@CPCpopulation,Population Demography Social_Science,en
 @flavioazevedo@mastodon.social,Flavio Azevedo,https://mastodon.social/@flavioazevedo,Ideology Political_Behavior Political_Psychology,en
 @magmikulak@universeodon.com,Magdalena Mikulak,https://universeodon.com/@magmikulak,Social_justice Health_inequalities Disability,en
-@SurreySociology@Mastodon.world,Surrey Sociology,https://mastodon.world/@SurreySociology,Sociology Media Criminology,
+@SurreySociology@Mastodon.world,Surrey Sociology,https://mastodon.world/@SurreySociology,Media Criminology,
 @DrC@mastodon.online,–,https://mastodon.online/@DrC,Trauma Abuse Flow,
 @NicoleKapelle@sciences.social,Nicole Kapelle,https://sciences.social/@NicoleKapelle,Family_dynamics Life_course Gender,
 @ellulie@home.social,Ella Wind,https://home.social/@ellulie,Democracy Labor MENA,en ar
@@ -64,7 +80,7 @@ account,name,link,keywords,language
 @Val_Mueller_ASU@econtwitter.net,Valerie Mueller,https://econtwitter.net/@Val_Mueller_ASU,demography population environment,en
 @jeremykuhnle@mastodon.social,Jeremy Kuhnle,https://mastodon.social/@jeremykuhnle,Social_inequality Immigration Causal_inference,de en
 @buraksonmez@sciences.social,Burak Sonmez,https://sciences.social/@buraksonmez,Experiments Stats Trust,
-@paolo@sciences.social, Paolo Velásquez, https://sciences.social/@paolo, Education Immigration Prejudice,en es sv
+@paolo@sciences.social,Paolo Velásquez, https://sciences.social/@paolo,Education Immigration Prejudice,en es sv
 @ghaliahfakhoury@mstdn.social,Ghaliah Fakhoury,https://mstdn.social/@ghaliahfakhoury,,en ar
 @afwilson@mastodon.world,–,https://mastodon.world/@afwilson,religion extremism environment,
 @camiloluvino@mas.to,Camilo,https://mas.to/@camiloluvino,culture neoliberalism sociability,sp
@@ -305,7 +321,7 @@ brenchurchill@sciences.social,Brendan Churchill,https://sciences.social/@brenchu
 @onlytina@todon.eu,onlytina,https://todon.eu/@onlytina,,
 @dwaldecker@fediscience.org,David Waldecker,https://fediscience.org/@dwaldecker,,
 @pardoguerra@mastodon.social,JP Pardo-Guerra,https://mastodon.social/@pardoguerra,,
-@pengzell@mastodon.social,Per Engzell,https://mastodon.social/@pengzell,,
+@per@sciences.social,Per Engzell,https://sciences.social/@per,,
 @perspektivbrocken@social.tchncs.de,David Adler,https://social.tchncs.de/@perspektivbrocken,architecture capitalism qualitative_methods,de en
 @PeterKahlert@digitalcourage.social,Peter Kahlert,https://digitalcourage.social/@PeterKahlert,,
 @philipncohen@mastodon.social,Philip N Cohen,https://mastodon.social/@philipncohen,,
