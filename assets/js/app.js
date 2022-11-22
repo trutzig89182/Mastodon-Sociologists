@@ -80,11 +80,15 @@ async function getCSVData () {
 }
 
 /**
- * Selects all checkboxes on the page
+ * Selects checkboxes currently displayed on the webpage
  */
 function selectAllUsers () {
   for (const checkbox of allCheckboxes()) {
-    checkbox.checked = true
+    console.log(checkbox.parentElement.getAttribute('style'))
+    if (checkbox.parentElement.getAttribute('style') == 'display: normal;') {
+        console.log("a checkbox was checked")
+        checkbox.checked = true
+    }
   }
 }
 
@@ -187,7 +191,6 @@ function buildUserSelectionForm (users) {
        const keyword_item = document.createElement('a')
        keyword_item.textContent = keywordArray[i].replaceAll("_", " ").toLowerCase()
        keyword_item.setAttribute('selected', false)
-       console.log('create new attribute selected = false for keyword')
        keyword_item.setAttribute('name', keywordArray[i].toLowerCase())
        keyword_item.setAttribute('onclick', 'selectedKeyword(this)')
        keyword_item.setAttribute('class', 'keywordclass')
@@ -273,9 +276,8 @@ function filterByKeyword (keywordElement) {
 
   // sets all elements to not selected and invisible before making only selected elements visible
   for (var i = 0; i < checkboxListElements.length; i++) {
-    //console.log('set to invisible')
+    // why is the syntax here different than below where setAttribute() is used? didn’t seem to work here.
     checkboxListElements.item(i).style.display = 'none' //setAttribute('style', 'diplay: none;')
-    //console.log(checkboxListElements.item(i).getAttribute('style'))
   }
 
   // setzt alle keyword.selected auf false (um dann nur die keywords, die dem aktuellen entsprechen auf true zu setzen.)
@@ -283,11 +285,11 @@ function filterByKeyword (keywordElement) {
     allKeywordElements.item(i).setAttribute('selected', false)
   }
 
+  // if selected keyword is in entry, the entries dom wlement will be set to visible
   for (var i = 0; i < allKeywordElements.length; i++) {
     if (allKeywordElements.item(i).name.toLowerCase() == this_keyword) { // looks for keyword in entire entry. could be more precise in looking at keyword
-      allKeywordElements.item(i).parentElement.setAttribute('style', 'display: normal;')//setAttribute('style', 'diplay: normal;')
-      allKeywordElements.item(i).setAttribute('selected', true) //setAttribute('selected', true)
-      console.log('set selected attribute of current keyword to true:', allKeywordElements.item(i).getAttribute('selected'))
+      allKeywordElements.item(i).parentElement.setAttribute('style', 'display: normal;')
+      allKeywordElements.item(i).setAttribute('selected', true)
     }
   }
 }
