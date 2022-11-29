@@ -176,12 +176,9 @@ function buildUserSelectionForm (users) {
     + array with seperate keywords if that is the case
     */
     if (typeof user.keywords !== 'undefined' && user.keywords !== null && user.keywords.trim() !== '') {
-     const keywordSeperator = document.createTextNode(" – Keywords: ")
+     const keywordSeperator = document.createTextNode(" | Keywords: ")
      wrapper.appendChild(keywordSeperator)
-     //const keywordstring = user.keywords.replaceAll(" ", ", ").replaceAll("_", " ")
      const keywordArray = user.keywords.split(" ")
-
-
      // append keywords as <a> elements and seperate them by a comma
      for (i in keywordArray) {
        if (i > 0) {
@@ -196,10 +193,38 @@ function buildUserSelectionForm (users) {
        keyword_item.setAttribute('class', 'keywordclass')
        wrapper.appendChild(keyword_item)
      }
-
     }
-    // appends this accounts checkboxlist item to the form
-    container.appendChild(wrapper)
+
+    /*
+     * Checks if user has a language string and seperates it into an
+     + array with seperate languages if that is the case
+     */
+     if (typeof user.language !== 'undefined' && user.language !== null && user.language.trim() !== '') {
+      const languageSeperator = document.createTextNode(" | ")
+      wrapper.appendChild(languageSeperator)
+      const languageArray = user.language.split(" ")
+      // append keywords as <a> elements and seperate them by a comma
+      for (i in languageArray) {
+        if (i > 0) {
+          const spaceSeperator = document.createTextNode(' ')
+          wrapper.appendChild(spaceSeperator)
+        }
+        // limit number of languages added to 3
+        if (i < 3) {
+            const language_item = document.createElement('a')
+            language_item.textContent = languageArray[i]
+            language_item.setAttribute('selected', false)
+            language_item.setAttribute('name', languageArray[i].toLowerCase())
+            // language is now treated just as a keyword. Change later if
+            language_item.setAttribute('onclick', 'selectedKeyword(this)')
+            language_item.setAttribute('class', 'keywordclass')
+            wrapper.appendChild(language_item)
+        }
+      }
+     }
+
+     // appends this accounts checkboxlist item to the form
+     container.appendChild(wrapper)
   }
 }
 
