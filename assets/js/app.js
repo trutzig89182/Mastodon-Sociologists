@@ -123,8 +123,10 @@ function buildUserSelectionForm (users) {
    return
   }
 
-  for (const user of users) {
+  const entryNumber = 0 // counter that allows to come back to order from CSV after sorting by name
 
+  for (const user of users) {
+    entryNumber += 1
     // Structure:
     // <div class="input-list-item">
     //   <input name="selected_users" value="user.account" id="user.account">
@@ -137,6 +139,7 @@ function buildUserSelectionForm (users) {
    //sets created checkbox item to visible. Will be set to 'none' later if a keyword is selected that is not part of this item
    wrapper.classList.add('input-list-item')
    wrapper.setAttribute('style', 'display: normal;')
+   wrapper.setAttribute('rank-mrf', entryNumber) // most recent first rank (1 = latest entry)
 
    const input = document.createElement('input')
    input.value = user.account
@@ -329,4 +332,10 @@ function undoFilter () {
   for (var i = 0; i < allKeywordElements.length; i++) {
     allKeywordElements.item(i).setAttribute('selected', false)
   }
+}
+
+// takes entries from user-list and sorts them by name
+function sortByName () {
+    const usersDOMList = getElementById(user-list)
+    usersDOMListArray = userDOMList.childNodes
 }
