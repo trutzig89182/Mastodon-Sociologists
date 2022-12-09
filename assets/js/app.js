@@ -337,5 +337,6 @@ function undoFilter () {
 // takes entries from user-list and sorts them by name
 function sortByName () {
     const usersDOMList = getElementById(user-list)
+    console.log(user-list)
     usersDOMListArray = userDOMList.childNodes
 }
