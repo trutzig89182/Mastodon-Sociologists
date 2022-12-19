@@ -1,4 +1,6 @@
 account,name,link,keywords,language
+@shelia@mastodon.social,Shelia Cotten,https://mastodon.social/@Shelia,technology health aging,
+@TomasCano@sciences.social,Tomás Cano,https://sciences.social/@TomasCano,Social_stratification Gender_inequalities,
 @stephaniemedleyrath@mastodon.world,Stephanie Medley-Rath,https://mastodon.world/@stephaniemedleyrath,,
 @GaiaGhirardi@sciences.social,Gaia Ghirardi,https://sciences.social/@GaiaGhirardi,,
 @A_Hudde@sciences.social,Ansgar Hudde,https://sciences.social/@A_Hudde,Family_sociology Political_sociology Transportation_and_mobility,
@@ -35,7 +37,7 @@ account,name,link,keywords,language
 @k8henne@mastodon.social,Kate Henne,https://mastodon.social/@k8henne,inequality technology governance,en
 @arianeophir@mastodon.social,Ariane Ophir,https://mastodon.social/@arianeophir,Family Gender Life_Course,
 @cosmos@piaille.fr,Comos,https://piaille.fr/@Cosmos#,Money Epistemology Economy,fr
-@ramyologist@mastodon.social,Ramy Youssef,https://mastodon.social/@ramyologist,Systems_Theory Diplomacy Text_Mining,de en
+@ramyologist@sciences.social,Ramy Youssef,https://sciences.social/@ramyologist,systems_theory diplomacy text_mining,de en
 @APWeiland@sciences.social,Andreas P. Weiland,https://sciences.social/@APWeiland,gender inequality life-course,
 @FHasselhorn@sciences.social,Fabian Hasselhorn,https://sciences.social/@FHasselhorn/,Criminology Situational_Action_Theory Experimental_research,de en
 @thofel@fediscience.org,Thomas Feliciani,https://fediscience.org/@thofel,Computational_social_science Meta-research Opinion_dynamics,en
@@ -97,7 +99,7 @@ account,name,link,keywords,language
 @justcodeculture@mastodon.social,Jeffrey Yost,https://mastodon.social/@JustCodeCulture,Inequality Power Technology,en
 @pparrasaiani@mastodon.uno,Paolo Parra Saiani,https://mastodon.uno/@pparrasaiani,fraud_in_science social_research_methodology science_and_politics,it en fr es
 @GSEJ@sciences.social,Centre for Global Science and Epistemic Justice,https://sciences.social/@GSEJ,STS RRI Interdisciplinarity,en
-@alinzar@mastodon.social,Evangeline Warren,https://mastodon.social/@alinzar,Race_and_ethnicity Health_disparities Discrimination,en
+@evangelinewarren@sciences.social,Evangeline Warren,https://sciences.social/@evangelinewarren,,
 @andreabellini@matodon.uno,Andrea Bellini,https://mastodon.uno/@andreabellini,Middle_classes Professions Industrial_relations,en it
 @scoavoux@sciences.social ,Samuel Coavoux,https://sciences.social/@scoavoux,Culture Inequalities CSS,fr en
 @derekcrim@mastodon.social,Derek Silva,https://mastodon.social/@derekcrim,Sport Labor Crime,
