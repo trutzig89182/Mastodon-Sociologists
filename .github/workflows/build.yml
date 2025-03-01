@@ -30,14 +30,14 @@ jobs:
     steps:
       # Checkout the repo
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
 
       # --- --- --- FROM HERE ON BUILDING
-      - name: Setup NodeJS 16
-        uses: actions/setup-node@v1
+      - name: Setup NodeJS 18
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          node-version: '18'
       - name: Run build script
       # NOTE: We have to switch this out for the real build script once we have it
         run: |
@@ -46,12 +46,12 @@ jobs:
 
       # From here on only upload and deploy
       - name: Setup Pages
-        uses: actions/configure-pages@v2
+        uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload the "dist" directory
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
